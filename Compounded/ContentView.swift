@@ -24,7 +24,7 @@ struct ContentView: View {
     }
     @State var alert = false
     var l :Bool {
-        if Locale.preferredLanguages.first! == "ar-US" {
+        if Locale.preferredLanguages.first! == "ar-SA" {
             return false
         }
         return true

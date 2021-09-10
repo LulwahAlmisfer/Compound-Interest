@@ -36,7 +36,7 @@ struct onBoardingView: View {
                 HStack{
                     if langE {
                         Text("What is compound interest ?").foregroundColor(.white).font(.title).padding(.leading , 10)
-                        // Text("\(preferredLanguages)")
+                      //   Text("\(Locale.preferredLanguages.first!)")
                     } else {
                         Text("ماهو العائد المركب؟").frame(width: 350, height: 40, alignment: .trailing).foregroundColor(.white).font(.title).padding(.trailing , 10)
                     }
