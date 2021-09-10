@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 var c  =  Color.init(red: 0.134, green: 0.17, blue: 0.3)
@@ -12,7 +11,8 @@ struct ContentView: View {
     @State var yearlyCont = ""
     @State var rate = 0.05
     @State var years = ""
-    @State var langE = true
+    @State var langE: Bool = true
+    @AppStorage("key0")  var shouldshowonb = true
     var a  : Bool {
         
         for i in arr {
@@ -23,22 +23,54 @@ struct ContentView: View {
         return false
     }
     @State var alert = false
+    var l :Bool {
+        if Locale.preferredLanguages.first! == "ar-US" {
+            return false
+        }
+        return true
+    }
+    
+    //var preferredLanguage: String = Locale.preferredLanguages.first!
     
     var body: some View {
         
       NavigationView{
+        
            
             ZStack {
                 
-                LinearGradient(gradient: Gradient(colors: [c, c2]), startPoint: .top, endPoint: .bottomTrailing).ignoresSafeArea()
-                ScrollView{
+                Color(hex: "206A5D").ignoresSafeArea(.all)   .onTapGesture {
+                    hideKeyboard()
+                }
+//
+//                LinearGradient(gradient: Gradient(colors: [ Color(hex: "206A5D"), Color.white]), startPoint: .top, endPoint: .bottom)
+//                    .ignoresSafeArea(.all)
+//
+//
+
+                ScrollView {
+                   
+                    
+                    Text(langE ? "Compound Interest" : "العائد المركب").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                     ZStack{
                         GeometryReader { proxy in
                             ZStack{
-                                Rectangle().opacity(0.2).cornerRadius(65.0).frame(width: proxy.size.width , height: proxy.size.height + 20, alignment: .center)
+//                                Rectangle().opacity(0.2).cornerRadius(65.0).frame(width: proxy.size.width , height: proxy.size.height + 20, alignment: .center)
+//
+                                BlurView(style: .dark).frame(width: proxy.size.width , height: proxy.size.height + 20, alignment: .top).clipShape(RoundedRectangle(cornerRadius: 25))
+                                    .overlay(RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 1.4).foregroundColor(.gray))
+                                    .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 0.0 )
                                 
+
+
+
                             }
                         }.padding(30)
+                        
+                        
                 VStack{
                     
                     Group{
@@ -47,20 +79,26 @@ struct ContentView: View {
                             if langE {
                         ZStack{
                             Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
-                            HStack { Text("     Initail deposit :")
-                                TextField(" Amount", text: $principalAmout  ).keyboardType(.numberPad)
+                            HStack { Text("   Initial deposit :")
+                                TextField(" Amount", text: $principalAmout  ).keyboardType(.asciiCapableNumberPad)
                             }
                         }.padding(.vertical)
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                             } else {
                                 ZStack{
                                     Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
                                     HStack {
                                         Spacer()
-                                        TextField("الكمية                              `", text: $principalAmout  ).keyboardType(.numberPad)
-                                        Text("   الوديعة الأولية :")
+                                        TextField("المبلغ                                  `", text: $principalAmout  ).keyboardType(.asciiCapableNumberPad)
+                                        Text("  الوديعة الأولية :")
                                         
                                     }
                                 }.padding(.vertical)
+                                .onTapGesture {
+                                    hideKeyboard()
+                                }
                             }
                             
                             //
@@ -68,24 +106,30 @@ struct ContentView: View {
                         ZStack{
                             Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: .leading).shadow(radius: 100)
                             HStack{ Text("  yearly contribution :")
-                                TextField("Amount", text: $yearlyCont ).keyboardType(.numberPad)
+                                TextField("Amount", text: $yearlyCont ).keyboardType(.asciiCapableNumberPad)
                             }
                         }.padding(.vertical)
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                             } else {
                                 ZStack{
                                     Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: .leading).shadow(radius: 100)
                                     HStack{
                                         Spacer()
-                                        TextField("الكمية                              `", text: $yearlyCont ).keyboardType(.numberPad)
-                                        Text(" الإضافات السنوية :")
+                                        TextField("المبلغ                              `", text: $yearlyCont ).keyboardType(.asciiCapableNumberPad)
+                                        Text("  الإضافات السنوية :")
                                     }
                                 }.padding(.vertical)
+                                .onTapGesture {
+                                    hideKeyboard()
+                                }
                             }
                             if langE{
                         ZStack{
                             Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
                             HStack{  Stepper(value: $rate , step : 0.01 ){
-                                Text("  rate \( 100*rate , specifier: "%g")%" )
+                                Text("rate \( 100 * rate , specifier: "%g")%" )
                                     .padding(.horizontal)
                                     
                             }
@@ -105,7 +149,7 @@ struct ContentView: View {
                                          
                                     }
                                         
-                                        Text(" النسبة :   %\( 100*rate , specifier: "%g") ")
+                                        Text("النسبة :   %\( 100 * rate , specifier: "%g") ")
                                     Spacer()
                                         
                                     }
@@ -117,19 +161,23 @@ struct ContentView: View {
                             if langE {
                         ZStack{
                             Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
-                            HStack{ Text("       years :")
-                                TextField("Amount " , text: $years).keyboardType(.numberPad)
+                            HStack{ Text("    years :")
+                                TextField("Amount " , text: $years).keyboardType(.asciiCapableNumberPad)
                                 }
+                            }  .onTapGesture {
+                                hideKeyboard()
                             }
                             } else {
                                 ZStack{
                                     Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
                                     HStack{
                                         Spacer()
-                                        TextField("الكمية                                             ' " , text: $years).keyboardType(.numberPad)
-                                        Text("   السنين :")
+                                        TextField("المدة                                           ' " , text: $years).keyboardType(.asciiCapableNumberPad)
+                                        Text("   السنوات :")
                                         }
                                     
+                                    }  .onTapGesture {
+                                        hideKeyboard()
                                     }
 
                             }
@@ -139,7 +187,9 @@ struct ContentView: View {
                     
                    
                     ZStack{
-                        Rectangle().frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).opacity(0.4).shadow(radius: 10).cornerRadius(30)
+                        Rectangle().frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(Color(hex: "206A5D"))
+                            .opacity(0.4).shadow(radius: 10).cornerRadius(30)
                         if principalAmout.isEmpty || yearlyCont.isEmpty || years.isEmpty || a{
                             Text((langE ? "calculate" : "احسب")).onTapGesture {
                                 alert.toggle()
@@ -150,8 +200,10 @@ struct ContentView: View {
                             NavigationLink((langE ? "calculate" : "احسب"), destination: lo(totalAmountnew: 0, principalAmoutnew: principalAmout, yearlyContnew: yearlyCont, ratenew: rate,  yearsnew: years , lang: langE)
                                     
                         )
+
                         }
                     }.padding(.vertical)
+
                     Spacer()
                 }
                 
@@ -159,18 +211,60 @@ struct ContentView: View {
                 }
             
             }
-            .navigationBarItems(trailing: Button( langE ? "عربي" : "Eng") {
-                langE.toggle()
+//            .onTapGesture {
+//                hideKeyboard()
+//            }
+
+            .navigationBarItems(leading: Button(action: {shouldshowonb.toggle()}, label: {
+                Image(systemName: "questionmark.circle").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             })
-            .navigationTitle((langE ? "Compounded" : "العائد المركب"))
+                                
+                                
+                                , trailing: Button( langE ? "عربي" : "Eng") {
+                                withAnimation(.easeOut(duration: 0.2)){
+                                    langE.toggle()
+                                }
+                            })
+           
+
             .alert(isPresented: $alert, content: {
-                Alert(title: Text((langE ? "problem!" : "حدث خطأ!")), message: Text((langE ?  "make sure to fill all the fields" : " تأكد من الفراغات واستخدام هذة الأرقام 123456789")), dismissButton: .default(Text((langE ? "ok" : "حسناً"))))
+                Alert(title: Text((langE ? "problem!" : "حدث خطأ!")), message: Text((langE ?  "Please fill in all the fields" : " تأكد من الفراغات ")), dismissButton: .default(Text((langE ? "ok" : "حسناً"))))
             })
       }.foregroundColor(.white)
-        
+
+      
+      .onAppear{
+        if l == false {
+            langE.toggle()
+        }
+      }
+      .fullScreenCover(isPresented: $shouldshowonb ){
+        tab(langE: $langE, shouldshowonb: $shouldshowonb)
+      }.ignoresSafeArea(.all)
     }
     
 
+}
+struct tab : View{
+  @Binding  var langE : Bool
+    @Binding var shouldshowonb :Bool
+    var body: some View {
+        
+        ZStack{
+            Color(hex: "206A5D").ignoresSafeArea(.all)
+        TabView{
+           
+            onBoardingView(langE: langE , shouldshowonb: $shouldshowonb)
+            steps(langE: $langE, imageName: "1.circle" , str: langE ? "Add your inital deposit : \nAmount of money that you have available to invest initially." : "أضف الوديعة الأولية ، وهي رأس المال الذي سوف تبدأ فيه.", shouldshowonb: $shouldshowonb )
+            
+            steps(langE: $langE, imageName: "2.circle" ,str: langE ? "Add the amount that you plan to add to the principal every year." :"حدد المبلغ الذي تريد إضافته لرأس المال سنويا.", shouldshowonb: $shouldshowonb)
+            steps(langE: $langE, imageName: "3.circle" , str: langE ? "Add your estimated annual interest rate." : "أضف نسبة العائد السنوي المتوقع .", shouldshowonb: $shouldshowonb)
+            steps(langE: $langE, imageName: "4.circle",str: langE ?"Add the length of time, in years, that you plan to save.":"حدد مدة الخطة الإستثمارية الخاصة بك بالسنوات. ", shouldshowonb: $shouldshowonb)
+                        
+        }.tabViewStyle(PageTabViewStyle())
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -197,7 +291,7 @@ struct lo : View{
       
         ZStack{
             
-            LinearGradient(gradient: Gradient(colors: [c, c2]), startPoint: .top, endPoint: .bottomTrailing).ignoresSafeArea()
+            Color(hex: "206A5D").ignoresSafeArea(.all)
             ScrollView{
             VStack{
                 if lang{
@@ -210,9 +304,9 @@ struct lo : View{
 
             }
                 } else {
-                    HStack{
+                    HStack {
                         Spacer()
-                    Text("العائد          ")
+                    Text("العائد     ")
                     Spacer()
                       Text("السنه")
                     Spacer()
@@ -231,7 +325,7 @@ struct lo : View{
                     
                     Text("   \(i)")
                     Spacer()
-                    Text(lang ?"\(str) $" : "\(str) " )
+                    Text(lang ?"\(str) $" : "           \(str)   " )
                     Spacer()
                 
                 }
@@ -273,3 +367,35 @@ struct lo : View{
     
 }
 
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (1, 1, 1, 0)
+        }
+
+        self.init(
+            .sRGB,
+            red: Double(r) / 255,
+            green: Double(g) / 255,
+            blue:  Double(b) / 255,
+            opacity: Double(a) / 255
+        )
+    }
+}
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+}
