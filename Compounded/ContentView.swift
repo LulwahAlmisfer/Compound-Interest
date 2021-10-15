@@ -30,8 +30,7 @@ struct ContentView: View {
         }
         return true
     }
-    
-    //var preferredLanguage: String = Locale.preferredLanguages.first!
+
     
     var body: some View {
         
