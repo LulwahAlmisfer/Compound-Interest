@@ -39,10 +39,7 @@ struct ContentView: View {
            
             ZStack {
                 
-                Color(hex: "206A5D").ignoresSafeArea(.all)   .onTapGesture {
-                    hideKeyboard()
-                }
-//
+                Color(hex: "206A5D").ignoresSafeArea(.all)   //
 //                LinearGradient(gradient: Gradient(colors: [ Color(hex: "206A5D"), Color.white]), startPoint: .top, endPoint: .bottom)
 //                    .ignoresSafeArea(.all)
 //
@@ -52,9 +49,7 @@ struct ContentView: View {
                    
                     
                     Text(langE ? "Compound Interest" : "العائد المركب").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .onTapGesture {
-                            hideKeyboard()
-                        }
+                        
                     ZStack{
                         GeometryReader { proxy in
                             ZStack{
@@ -83,9 +78,7 @@ struct ContentView: View {
                                 TextField(" Amount", text: $principalAmout  ).keyboardType(.asciiCapableNumberPad)
                             }
                         }.padding(.vertical)
-                        .onTapGesture {
-                            hideKeyboard()
-                        }
+                        
                             } else {
                                 ZStack{
                                     Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).shadow(radius: 100)
@@ -96,10 +89,7 @@ struct ContentView: View {
                                         
                                     }
                                 }.padding(.vertical)
-                                .onTapGesture {
-                                    hideKeyboard()
-                                }
-                            }
+                                                            }
                             
                             //
                             if langE{
@@ -109,10 +99,7 @@ struct ContentView: View {
                                 TextField("Amount", text: $yearlyCont ).keyboardType(.asciiCapableNumberPad)
                             }
                         }.padding(.vertical)
-                        .onTapGesture {
-                            hideKeyboard()
-                        }
-                            } else {
+                                                    } else {
                                 ZStack{
                                     Rectangle().opacity(0.3).cornerRadius(30.0).frame(width: 330, height: 50, alignment: .leading).shadow(radius: 100)
                                     HStack{
@@ -121,9 +108,6 @@ struct ContentView: View {
                                         Text("  الإضافات السنوية :")
                                     }
                                 }.padding(.vertical)
-                                .onTapGesture {
-                                    hideKeyboard()
-                                }
                             }
                             if langE{
                         ZStack{
@@ -164,8 +148,6 @@ struct ContentView: View {
                             HStack{ Text("    years :")
                                 TextField("Amount " , text: $years).keyboardType(.asciiCapableNumberPad)
                                 }
-                            }  .onTapGesture {
-                                hideKeyboard()
                             }
                             } else {
                                 ZStack{
@@ -176,8 +158,6 @@ struct ContentView: View {
                                         Text("   السنوات :")
                                         }
                                     
-                                    }  .onTapGesture {
-                                        hideKeyboard()
                                     }
 
                             }
