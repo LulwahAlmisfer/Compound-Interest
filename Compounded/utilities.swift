@@ -114,7 +114,7 @@ struct ListView: View {
             Divider().foregroundStyle(Color("AccentColor"))
             ForEach(1 ..< AllData[0].Data.count, id: \.self){ i in
                 HStack{
-                    Text("\(i)")
+                    Text(String(i))
                     Spacer()
                     Text(String(format: "%.2f", AllData[0].Data[i]))
                     Spacer()

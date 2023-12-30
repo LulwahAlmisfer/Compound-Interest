@@ -50,8 +50,8 @@ struct MainView: View {
                     }.padding()
                     
                     Picker(selection: $selected, label: Text("Picker")) {
-                        Text("monthly").tag(0)
-                        Text("yearly").tag(1)
+                        Text("Monthly").tag(0)
+                        Text("Yearly").tag(1)
                     }.pickerStyle(.segmented)
                         .padding()
                     
@@ -103,8 +103,8 @@ struct MainView: View {
                             ForEach(AllData) { obj in
                                 ForEach(obj.DataByYear, id: \.month) { Data in
                                     BarMark(
-                                        x: .value("years", Data.0),
-                                        y: .value("amount", Data.amount)
+                                        x: .value("Years", Data.0),
+                                        y: .value("Amount", Data.amount)
                                     )
                                     .position(by: .value("Product", obj.name))
                                     .foregroundStyle(by: .value("Product", obj.name))
@@ -114,7 +114,7 @@ struct MainView: View {
                             range: Gradient (
                                 colors: [
                                     .green,
-                                    .accentColor
+                                    Color("AccentColor")
                                 ]
                             )
                         )
@@ -175,4 +175,8 @@ struct MainView: View {
 
 #Preview {
     MainView()
+}
+#Preview("arabic") {
+    MainView()
+        .environment(\.locale,Locale(identifier: "AR"))
 }

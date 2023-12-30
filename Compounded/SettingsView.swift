@@ -19,8 +19,8 @@ struct SettingsView: View {
              
             
             VStack(alignment: .leading){
-                Text("What is compound intrest?").font(.headline).foregroundStyle(Color("AccentColor"))
-                Text("In simple terms, compound interest can be defined as interest you earn on interest. With a savings account that earns compound interest, you earn interest on the principal (the initial amount deposited) plus on the interest that accumulates over time.").font(.subheadline)
+                Text("What is compound interest ?").font(.headline).foregroundStyle(Color("AccentColor"))
+                Text("It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. basically when you earn interest on both the money you've saved and the interest you earn.").font(.subheadline)
             }
             
             Link("Rate Us ⭐️", destination: URL(string: "https://apps.apple.com/app/id1580068094?action=write-review")!)
@@ -36,6 +36,10 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
 }
+#Preview("arabic") {
+    SettingsView()
+        .environment(\.locale,Locale(identifier: "AR"))
+}
 
 struct MemberView: View {
     var name = ""
@@ -45,9 +49,9 @@ struct MemberView: View {
         HStack{
             Image(name).resizable().scaledToFit()
             VStack(alignment:.leading){
-                Text(name).font(.headline)
+                Text(LocalizedStringKey(name)).font(.headline)
                 Link("LinkedIn", destination: URL(string:link)!).font(.headline)
-                Text(role)
+                Text(LocalizedStringKey(role))
             }
         }
     }
