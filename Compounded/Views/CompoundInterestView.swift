@@ -22,9 +22,9 @@ struct CompoundInterestView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Inputs")) {
-                    TextField("Initial Deposit", value: $viewModel.initialDeposit, format: .number)
-                        .keyboardType(.decimalPad)
+                Section(header: Text("Information") .textCase(nil)) {
+                    TextField("Initail deposit", value: $viewModel.initialDeposit,formatter: NumberFormatter.latinDigitsFormatter)
+                        .keyboardType(.asciiCapableNumberPad)
                         .focused($focusedField, equals: .initialDeposit)
                         .submitLabel(.next)
                         .onSubmit {
@@ -37,20 +37,21 @@ struct CompoundInterestView: View {
                     }
                     .pickerStyle(.segmented)
 
-                    TextField("Contribution Amount", value: $viewModel.contribution, format: .number)
-                        .keyboardType(.decimalPad)
+                    TextField("Contribution Amount", value: $viewModel.contribution, formatter:  NumberFormatter.latinDigitsFormatter)
+                        .keyboardType(.asciiCapableNumberPad)
                         .focused($focusedField, equals: .contribution)
                         .submitLabel(.next)
                         .onSubmit {
                             focusedField = .years
                         }
 
-                    Stepper(value: $viewModel.interestRate, in: 0...100, step: 0.25) {
-                        Text("Interest Rate: \(viewModel.interestRate, specifier: "%.2f")%")
+                    Stepper(value: $viewModel.interestRate, in: 0.25...100, step: 0.25) {
+                        let formatted = NumberFormatter.latinDigitsFormatter.string(from: NSNumber(value: viewModel.interestRate)) ?? ""
+                         Text("Interest Rate \(formatted)%")
                     }
 
-                    TextField("Years", value: $viewModel.years, format: .number)
-                        .keyboardType(.numberPad)
+                    TextField("Years", value: $viewModel.years, formatter:  NumberFormatter.latinDigitsFormatter)
+                        .keyboardType(.asciiCapableNumberPad)
                         .focused($focusedField, equals: .years)
                         .submitLabel(.done)
                         .onSubmit {
@@ -60,14 +61,17 @@ struct CompoundInterestView: View {
 
                 Button("Calculate") {
                     withAnimation {
-                        focusedField = nil 
-                        viewModel.calculate()
+                        DispatchQueue.main.async {
+                            focusedField = nil
+                            viewModel.calculate()
+                        }
                     }
                 }
 
                 if !viewModel.results.isEmpty {
                     
-                    Section(header: Text("Chart")) {
+                    Section(header: Text("Chart")
+                        .textCase(nil)) {
                         VStack {
                             
                             
@@ -84,6 +88,7 @@ struct CompoundInterestView: View {
                                     )
                                 }
                             }
+                            .environment(\.locale, .init(identifier: "en"))
                             .chartLegend(position: .top, alignment: .center)
                             .frame(height: 300)
                             .padding(.bottom)
@@ -109,50 +114,58 @@ struct CompoundInterestView: View {
 
 
 
-                    Section(header: Text("Details")) {
+                    Section(header: Text("Details")
+                        .textCase(nil)) {
                         VStack(spacing: 4) {
 
                             HStack {
                                 Text("Year")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                             
+                                    .padding(.leading, 4)
+
                                 Text("Non-Compounded")
                                     .frame(maxWidth: .infinity, alignment: .center)
                                 
                                 Text("Compounded")
                                     .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .padding(.trailing, 4)
                             }
                             .fontWeight(.bold)
                             .font(.system(size: 12))
                             .foregroundStyle(Color.accentColor)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
+
                             .padding(.bottom,4)
 
 
                             ForEach(viewModel.results) { result in
                                 HStack {
-                                    Text("\(result.year)")
+                                    Text(Formatter.withCommas.string(for: result.year) ?? "\(result.year)")
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.leading,4)
-                                
-                                    Text("\(Int(result.nonCompounded))")
+                                        .padding(.leading, 4)
+                                    
+                                    Text(Formatter.withCommas.string(for: result.nonCompounded) ?? "\(result.nonCompounded)")
                                         .frame(maxWidth: .infinity, alignment: .center)
                                     
-                                    Text("\(Int(result.futureValue))")
+                                    Text(Formatter.withCommas.string(for: result.futureValue) ?? "\(result.futureValue)")
                                         .frame(maxWidth: .infinity, alignment: .trailing)
-                                        .padding(.trailing,4)
-
+                                        .padding(.trailing, 4)
                                 }
+
                                 .font(.callout)
                             }
                         }
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                     }
                 }
             }
+            .scrollIndicators(.hidden)
             .navigationTitle("Calculator")
-            .onAppear{ PickerStyle() }
-            .environment(\.locale, .init(identifier: Locale.current.languageCode ?? "en"))
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Clear", action: viewModel.clear)
+                }
+            }
         }
     }
 }

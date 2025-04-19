@@ -4,12 +4,6 @@
     "" : {
 
     },
-    "%lld" : {
-
-    },
-    "Actions" : {
-
-    },
     "Amount" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -32,7 +26,24 @@
       }
     },
     "Calculator" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحاسبة"
+          }
+        }
+      }
+    },
+    "Calendar" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التقويم"
+          }
+        }
+      }
     },
     "Change language" : {
       "localizations" : {
@@ -45,7 +56,14 @@
       }
     },
     "Chart" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرسم البياني"
+          }
+        }
+      }
     },
     "Check all the fields" : {
       "extractionState" : "stale",
@@ -59,7 +77,6 @@
       }
     },
     "Clear" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -91,7 +108,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "العائد المركب"
+            "value" : "مركّب"
           }
         }
       }
@@ -114,7 +131,14 @@
       }
     },
     "Contribution Amount" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مساهمات"
+          }
+        }
+      }
     },
     "Contribution Frequency" : {
 
@@ -126,6 +150,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "مساهمات"
+          }
+        }
+      }
+    },
+    "DEF" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفكرة من العائد المركب هو انك تحقق ربح اضافي عن طريق استثمار ارباحك السابقة بالاضافة الى ربحك من استثمار رأس المال، يعني ببساطة انك تقوم بأعادة استثمار ارباحك حتى تحقق عوائد عليها ايضا و تكرر ذلك كل سنة حتى تتراكم الارباح."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. \n \nbasically when you earn interest on both the money you've saved and the interest you earn."
           }
         }
       }
@@ -148,7 +189,14 @@
       }
     },
     "Details" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التفاصيل"
+          }
+        }
+      }
     },
     "Dividens soon" : {
 
@@ -182,27 +230,57 @@
       }
     },
     "Information" : {
-
-    },
-    "Initail deposit: " : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الوديعة الأولية :"
+            "value" : "معلومات"
           }
         }
       }
     },
-    "Initial Deposit" : {
-
+    "Initail deposit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوديعة الأولية"
+          }
+        }
+      }
     },
-    "Inputs" : {
-
+    "Interest Rate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة العائد"
+          }
+        }
+      }
+    },
+    "Interest Rate %@%%" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة الفائدة %@%%"
+          }
+        }
+      }
     },
     "Interest Rate: %.2f%%" : {
-
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة الفائدة %.2f%%"
+          }
+        }
+      }
     },
     "iOS Developer" : {
       "extractionState" : "manual",
@@ -215,25 +293,8 @@
         }
       }
     },
-    "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. basically when you earn interest on both the money you've saved and the interest you earn." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفكرة من العائد المركب هو انك تحقق ربح اضافي عن طريق استثمار ارباحك السابقة بالاضافة الى ربحك من استثمار رأس المال، يعني ببساطة انك تقوم بأعادة استثمار ارباحك حتى تحقق عوائد عليها ايضا و تكرر ذلك كل سنة حتى تتراكم الارباح."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. \n \nbasically when you earn interest on both the money you've saved and the interest you earn."
-          }
-        }
-      }
-    },
-    "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. Basically, when you earn interest on both the money you've saved and the interest you earn." : {
-
+    "Key" : {
+      "extractionState" : "manual"
     },
     "Length of time" : {
       "extractionState" : "stale",
@@ -291,7 +352,14 @@
       }
     },
     "Non-Compounded" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير مركّب"
+          }
+        }
+      }
     },
     "OK" : {
       "extractionState" : "stale",
@@ -300,6 +368,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "اغلاق"
+          }
+        }
+      }
+    },
+    "Other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أخرى"
           }
         }
       }
@@ -391,11 +470,15 @@
         }
       }
     },
-    "Tab 2" : {
-
-    },
     "Team Members" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفريق"
+          }
+        }
+      }
     },
     "time" : {
       "extractionState" : "manual",

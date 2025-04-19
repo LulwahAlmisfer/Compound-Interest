@@ -85,14 +85,49 @@ struct Object: Identifiable {
 struct PickerStyle {
     
     init() {
-        // Sets the background color of the Picker
-        //   UISegmentedControl.appearance().backgroundColor = UIColor.theme.Rectangles
-        // Disappears the divider
         UISegmentedControl.appearance().setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
-        // Changes the color for the selected item
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "AccentColor")
-        // Changes the text color for the selected item
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        
+    }
+}
+
+extension NumberFormatter {
+    static let latinDigitsFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX") 
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+}
+
+
+extension Formatter {
+    static let latinInteger: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+    static let withCommas: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 0
+        formatter.usesGroupingSeparator = true
+
+        return formatter
+    }()
+}
+
+extension String {
+    var convertedToEnglishDigits: String {
+        let map: [Character: Character] = [
+            "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4",
+            "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9"
+        ]
+        return String(self.map { map[$0] ?? $0 })
     }
 }

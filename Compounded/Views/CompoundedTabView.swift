@@ -18,7 +18,7 @@ struct CompoundedTabView: View {
 
             Text("Dividens soon")
                 .tabItem {
-                    Label("Tab 2", systemImage: "banknote")
+                    Label("Calendar", systemImage: "calendar")
                 }
 
             SettingsView()

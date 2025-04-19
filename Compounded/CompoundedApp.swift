@@ -13,6 +13,7 @@ struct CompoundedApp: App {
     var body: some Scene {
         WindowGroup {
             CompoundedTabView()
+                .onAppear{ PickerStyle() }
         }
     }
 }

@@ -62,4 +62,13 @@ class CompoundInterestViewModel: ObservableObject {
 
         results = futureValues
     }
+    
+    func clear(){
+        initialDeposit = nil
+        contribution = nil
+        years = nil
+        isMonthly = true
+        results = []
+        interestRate = 5
+    }
 }
