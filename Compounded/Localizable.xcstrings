@@ -5,6 +5,7 @@
 
     },
     "Amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -24,6 +25,26 @@
         }
       }
     },
+    "Calculator" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحاسبة"
+          }
+        }
+      }
+    },
+    "Calendar" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التقويم"
+          }
+        }
+      }
+    },
     "Change language" : {
       "localizations" : {
         "ar" : {
@@ -34,7 +55,18 @@
         }
       }
     },
+    "Chart" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرسم البياني"
+          }
+        }
+      }
+    },
     "Check all the fields" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -76,7 +108,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "العائد المركب"
+            "value" : "مركّب"
           }
         }
       }
@@ -98,12 +130,43 @@
         }
       }
     },
-    "Contributions: " : {
+    "Contribution Amount" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "مساهمات"
+          }
+        }
+      }
+    },
+    "Contribution Frequency" : {
+
+    },
+    "Contributions: " : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مساهمات"
+          }
+        }
+      }
+    },
+    "DEF" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفكرة من العائد المركب هو انك تحقق ربح اضافي عن طريق استثمار ارباحك السابقة بالاضافة الى ربحك من استثمار رأس المال، يعني ببساطة انك تقوم بأعادة استثمار ارباحك حتى تحقق عوائد عليها ايضا و تكرر ذلك كل سنة حتى تتراكم الارباح."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. \n \nbasically when you earn interest on both the money you've saved and the interest you earn."
           }
         }
       }
@@ -125,7 +188,40 @@
         }
       }
     },
+    "Details" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التفاصيل"
+          }
+        }
+      }
+    },
+    "Distribution Date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ التوزيع"
+          }
+        }
+      }
+    },
+    "Due Date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ الاستحقاق"
+          }
+        }
+      }
+    },
     "Future Value" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -152,12 +248,55 @@
         }
       }
     },
-    "Initail deposit: " : {
+    "Information" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الوديعة الأولية :"
+            "value" : "معلومات"
+          }
+        }
+      }
+    },
+    "Initail deposit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوديعة الأولية"
+          }
+        }
+      }
+    },
+    "Interest Rate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة العائد"
+          }
+        }
+      }
+    },
+    "Interest Rate %@%%" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة الفائدة %@%%"
+          }
+        }
+      }
+    },
+    "Interest Rate: %.2f%%" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسبة الفائدة %.2f%%"
           }
         }
       }
@@ -173,23 +312,11 @@
         }
       }
     },
-    "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. basically when you earn interest on both the money you've saved and the interest you earn." : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفكرة من العائد المركب هو انك تحقق ربح اضافي عن طريق استثمار ارباحك السابقة بالاضافة الى ربحك من استثمار رأس المال، يعني ببساطة انك تقوم بأعادة استثمار ارباحك حتى تحقق عوائد عليها ايضا و تكرر ذلك كل سنة حتى تتراكم الارباح."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. \n \nbasically when you earn interest on both the money you've saved and the interest you earn."
-          }
-        }
-      }
+    "Key" : {
+      "extractionState" : "manual"
     },
     "Length of time" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -243,7 +370,18 @@
         }
       }
     },
+    "Non-Compounded" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير مركّب"
+          }
+        }
+      }
+    },
     "OK" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -253,7 +391,19 @@
         }
       }
     },
+    "Other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أخرى"
+          }
+        }
+      }
+    },
     "Picker" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -264,6 +414,7 @@
       }
     },
     "Product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -301,6 +452,7 @@
       }
     },
     "Rate: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -337,6 +489,16 @@
         }
       }
     },
+    "Team Members" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفريق"
+          }
+        }
+      }
+    },
     "time" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -355,6 +517,7 @@
       }
     },
     "Total Contributions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -370,6 +533,9 @@
         }
       }
     },
+    "Type" : {
+
+    },
     "UI/UX Designer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -380,6 +546,9 @@
           }
         }
       }
+    },
+    "Value" : {
+
     },
     "What is compound interest ?" : {
       "extractionState" : "manual",
@@ -436,6 +605,7 @@
       }
     },
     "Years: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
