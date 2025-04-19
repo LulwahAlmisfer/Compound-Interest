@@ -53,10 +53,11 @@ enum TypeEnum: String, Codable {
     var color: Color {
         switch self {
         case .distributionDate:
-            return .blue
+            return .orange
         case .dueDate:
-            return .red
+            return .green
         }
     }
+    
 }
 
