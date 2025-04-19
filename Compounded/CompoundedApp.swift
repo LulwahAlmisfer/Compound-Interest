@@ -12,7 +12,7 @@ struct CompoundedApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            CompoundedTabView()
         }
     }
 }

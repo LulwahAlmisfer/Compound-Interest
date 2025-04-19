@@ -7,22 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */; };
+		2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */; };
+		2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */; };
+		2FFD5BF32DB3B27E00E85436 /* CompoundInterestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */; };
+		2FFD5BF52DB3B29300E85436 /* ChartEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */; };
 		319E32A526AB8760005C0920 /* CompoundedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319E32A426AB8760005C0920 /* CompoundedApp.swift */; };
 		319E32A926AB8762005C0920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319E32A826AB8762005C0920 /* Assets.xcassets */; };
 		319E32AC26AB8762005C0920 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319E32AB26AB8762005C0920 /* Preview Assets.xcassets */; };
-		A00900012B407AC50061987A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00900002B407AC50061987A /* MainView.swift */; };
 		A00900032B407AE40061987A /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00900022B407AE40061987A /* utilities.swift */; };
 		A00900052B407AFA0061987A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00900042B407AFA0061987A /* SettingsView.swift */; };
 		A0568C492B40865E0080B5F4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A0568C482B40865E0080B5F4 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestView.swift; sourceTree = "<group>"; };
+		2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestViewModel.swift; sourceTree = "<group>"; };
+		2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedTabView.swift; sourceTree = "<group>"; };
+		2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestResult.swift; sourceTree = "<group>"; };
+		2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEntry.swift; sourceTree = "<group>"; };
 		319E32A126AB8760005C0920 /* Compounded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compounded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319E32A426AB8760005C0920 /* CompoundedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedApp.swift; sourceTree = "<group>"; };
 		319E32A826AB8762005C0920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		319E32AB26AB8762005C0920 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		319E32AD26AB8762005C0920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A00900002B407AC50061987A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A00900022B407AE40061987A /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		A00900042B407AFA0061987A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A0568C482B40865E0080B5F4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -39,6 +47,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FFD5BEE2DB3B1EB00E85436 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */,
+				2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */,
+				A00900042B407AFA0061987A /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2FFD5BEF2DB3B20900E85436 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2FFD5BF02DB3B22900E85436 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A00900022B407AE40061987A /* utilities.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2FFD5BF12DB3B26A00E85436 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */,
+				2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		319E329826AB8760005C0920 = {
 			isa = PBXGroup;
 			children = (
@@ -59,13 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				319E32A426AB8760005C0920 /* CompoundedApp.swift */,
+				319E32AA26AB8762005C0920 /* Preview Content */,
 				319E32A826AB8762005C0920 /* Assets.xcassets */,
 				319E32AD26AB8762005C0920 /* Info.plist */,
-				319E32AA26AB8762005C0920 /* Preview Content */,
-				A00900002B407AC50061987A /* MainView.swift */,
-				A00900022B407AE40061987A /* utilities.swift */,
-				A00900042B407AFA0061987A /* SettingsView.swift */,
 				A0568C482B40865E0080B5F4 /* Localizable.xcstrings */,
+				2FFD5BF12DB3B26A00E85436 /* Models */,
+				2FFD5BEE2DB3B1EB00E85436 /* Views */,
+				2FFD5BEF2DB3B20900E85436 /* ViewModels */,
+				2FFD5BF02DB3B22900E85436 /* Helper */,
 			);
 			path = Compounded;
 			sourceTree = "<group>";
@@ -155,9 +199,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00900032B407AE40061987A /* utilities.swift in Sources */,
+				2FFD5BF32DB3B27E00E85436 /* CompoundInterestResult.swift in Sources */,
 				A00900052B407AFA0061987A /* SettingsView.swift in Sources */,
+				2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */,
 				319E32A526AB8760005C0920 /* CompoundedApp.swift in Sources */,
-				A00900012B407AC50061987A /* MainView.swift in Sources */,
+				2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */,
+				2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */,
+				2FFD5BF52DB3B29300E85436 /* ChartEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +345,7 @@
 				DEVELOPMENT_TEAM = 6ADLC37UA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Compounded/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +373,7 @@
 				DEVELOPMENT_TEAM = 6ADLC37UA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Compounded/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

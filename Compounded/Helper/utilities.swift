@@ -96,31 +96,3 @@ struct PickerStyle {
         
     }
 }
-
-
-struct ListView: View {
-    @Binding var AllData: [Object]
-    var body: some View {
-        VStack{
-            Divider().foregroundStyle(Color("AccentColor"))
-            HStack{
-                Text("Year")
-                Spacer()
-                Text("Total Contributions")
-                Spacer()
-                Text("Future Value")
-            }.font(.subheadline)
-                .foregroundStyle(Color("AccentColor"))
-            Divider().foregroundStyle(Color("AccentColor"))
-            ForEach(1 ..< AllData[0].Data.count, id: \.self){ i in
-                HStack{
-                    Text(String(i))
-                    Spacer()
-                    Text(String(format: "%.2f", AllData[0].Data[i]))
-                    Spacer()
-                    Text(String(format: "%.2f", AllData[1].Data[i]))
-                }
-            }
-        }.padding(.horizontal).padding(.top)
-    }
-}

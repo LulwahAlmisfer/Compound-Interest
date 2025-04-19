@@ -4,7 +4,14 @@
     "" : {
 
     },
+    "%lld" : {
+
+    },
+    "Actions" : {
+
+    },
     "Amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -24,6 +31,9 @@
         }
       }
     },
+    "Calculator" : {
+
+    },
     "Change language" : {
       "localizations" : {
         "ar" : {
@@ -34,7 +44,11 @@
         }
       }
     },
+    "Chart" : {
+
+    },
     "Check all the fields" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -45,6 +59,7 @@
       }
     },
     "Clear" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -98,7 +113,14 @@
         }
       }
     },
+    "Contribution Amount" : {
+
+    },
+    "Contribution Frequency" : {
+
+    },
     "Contributions: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -125,7 +147,14 @@
         }
       }
     },
+    "Details" : {
+
+    },
+    "Dividens soon" : {
+
+    },
     "Future Value" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -152,7 +181,11 @@
         }
       }
     },
+    "Information" : {
+
+    },
     "Initail deposit: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -161,6 +194,15 @@
           }
         }
       }
+    },
+    "Initial Deposit" : {
+
+    },
+    "Inputs" : {
+
+    },
+    "Interest Rate: %.2f%%" : {
+
     },
     "iOS Developer" : {
       "extractionState" : "manual",
@@ -174,6 +216,7 @@
       }
     },
     "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. basically when you earn interest on both the money you've saved and the interest you earn." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -189,7 +232,11 @@
         }
       }
     },
+    "It is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. Basically, when you earn interest on both the money you've saved and the interest you earn." : {
+
+    },
     "Length of time" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -243,7 +290,11 @@
         }
       }
     },
+    "Non-Compounded" : {
+
+    },
     "OK" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -254,6 +305,7 @@
       }
     },
     "Picker" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -264,6 +316,7 @@
       }
     },
     "Product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -301,6 +354,7 @@
       }
     },
     "Rate: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -337,6 +391,12 @@
         }
       }
     },
+    "Tab 2" : {
+
+    },
+    "Team Members" : {
+
+    },
     "time" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -355,6 +415,7 @@
       }
     },
     "Total Contributions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -370,6 +431,9 @@
         }
       }
     },
+    "Type" : {
+
+    },
     "UI/UX Designer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -380,6 +444,9 @@
           }
         }
       }
+    },
+    "Value" : {
+
     },
     "What is compound interest ?" : {
       "extractionState" : "manual",
@@ -436,6 +503,7 @@
       }
     },
     "Years: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
