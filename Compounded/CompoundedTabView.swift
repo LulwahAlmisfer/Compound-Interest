@@ -16,7 +16,7 @@ struct CompoundedTabView: View {
                     Label("Calculator", systemImage: "chart.bar.fill")
                 }
 
-            Text("Dividens soon")
+            CalendarView()
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
