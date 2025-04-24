@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 class CompoundInterestViewModel: ObservableObject {
-    @Published var initialDeposit: Double? = 1000
-    @Published var contribution: Double? = 100
+    @Published var initialDeposit: Double? = nil
+    @Published var contribution: Double? = nil
     @Published var interestRate: Double = 5.0
-    @Published var years: Int? = 10
+    @Published var years: Int? = nil
     @Published var isMonthly: Bool = true
 
     @Published var results: [CompoundInterestResult] = []
