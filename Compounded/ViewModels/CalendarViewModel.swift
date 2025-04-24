@@ -5,14 +5,13 @@
 ////  Created by Lulwah almisfer on 19/04/2025.
 ////
 //
-import Foundation
+import SwiftUI
 
-@MainActor
 class CalendarViewModel: ObservableObject {
     @Published var dividends: [Dividends] = []
     @Published var mockDividends: [Dividends] = []
     @Published var isLoading = true
-
+    
     init() {
         getMockFromJson()
         fetchDividends()
@@ -31,23 +30,41 @@ class CalendarViewModel: ObservableObject {
             return
         }
         
-        Task {
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let decodedDividends = try JSONDecoder().decode([Dividends].self, from: data)
-
-                await MainActor.run {
-                    self.dividends = decodedDividends
-                    self.getEngNamesFromJson()
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Fetch error: \(error)")
+                DispatchQueue.main.async {
                     self.isLoading = false
                 }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+                return
+            }
+            
+            do {
+                let decoded = try JSONDecoder().decode([Dividends].self, from: data)
+                
+                withAnimation {
+                    DispatchQueue.main.async {
+                        self.dividends = decoded
+                        self.getEngNamesFromJson()
+                        self.isLoading = false
+                    }
+                }
+                
+                
             } catch {
-                print("Error: \(error)")
-                await MainActor.run {
+                print("Decoding error: \(error)")
+                DispatchQueue.main.async {
                     self.isLoading = false
                 }
             }
-        }
+        }.resume()
     }
     
     func getEngNamesFromJson() {
@@ -61,32 +78,40 @@ class CalendarViewModel: ObservableObject {
             let decoded = try JSONDecoder().decode(StockInfoContainer.self, from: data)
             
             let symbolToNameMap = Dictionary(uniqueKeysWithValues: decoded.stocks.map { ($0.symbol, $0.title_en) })
-
-            for i in dividends.indices {
-                if let engName = symbolToNameMap[dividends[i].symbol] {
-                    dividends[i].companyNameEng = engName.removeCo()
+            
+            DispatchQueue.main.async {
+                for i in self.dividends.indices {
+                    if let engName = symbolToNameMap[self.dividends[i].symbol] {
+                        self.dividends[i].companyNameEng = engName.removeCo()
+                    }
                 }
             }
         } catch {
-            print("Error loading or parsing JSON: \(error)")
+            print("Error parsing symbols_and_titles_en.json: \(error)")
         }
     }
     
     func getMockFromJson() {
         guard let url = Bundle.main.url(forResource: "CompoundedMockResponse", withExtension: "json") else {
-            print("JSON file not found.")
+            print("Mock JSON file not found.")
             return
         }
+        
         do {
             let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode([Dividends].self, from: data)
+            var decoded = try JSONDecoder().decode([Dividends].self, from: data)
             
-            mockDividends = decoded
-            mockDividends[0].eventDate = .now
+            
+            if !decoded.isEmpty {
+                decoded[0].eventDate = .now
+            }
+            
+            DispatchQueue.main.async {
+                self.mockDividends = decoded
+            }
         } catch {
-            print("Error loading or parsing JSON: \(error)")
+            print("Error parsing mock JSON: \(error)")
         }
         
     }
-    
 }

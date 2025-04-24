@@ -15,7 +15,7 @@ struct CalendarView: View {
             Group {
 
                     ScrollView {
-                        VStack(alignment: .leading, spacing: 24) {
+                        LazyVStack(alignment: .leading, spacing: 24) {
                             
                             if !viewModel.getTodayAnnouncements().isEmpty {
                                 VStack(alignment: .leading, spacing: 12) {
