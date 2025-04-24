@@ -11,11 +11,11 @@ struct Dividends: Codable,Identifiable {
     let id: Int
     let symbol: String
     let type: TypeEnum
-    let eventDate: Date
+    var eventDate: Date
     let companyName: String
     var companyNameEng: String?
     let amount: Double
-    let imageUrl: String
+    var imageUrl: String
     
     var isTasi: Bool {
         if let symbolNum = Int(symbol) {

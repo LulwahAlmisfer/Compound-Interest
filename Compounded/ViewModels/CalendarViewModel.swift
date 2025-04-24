@@ -7,23 +7,30 @@
 //
 import Foundation
 
+@MainActor
 class CalendarViewModel: ObservableObject {
     @Published var dividends: [Dividends] = []
+    @Published var mockDividends: [Dividends] = []
     @Published var isLoading = true
 
     init() {
+        getMockFromJson()
         fetchDividends()
     }
     
     func getTodayAnnouncements() -> [Dividends] {
-        dividends.filter { $0.eventDate.isToday }
+        return isLoading ? mockDividends : dividends.filter { $0.eventDate.isToday }
     }
-
+    
+    func getAllAnnouncements() -> [Dividends] {
+        return isLoading ? mockDividends : dividends
+    }
+    
     func fetchDividends() {
         guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/dividends/events") else {
             return
         }
-
+        
         Task {
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
@@ -63,6 +70,23 @@ class CalendarViewModel: ObservableObject {
         } catch {
             print("Error loading or parsing JSON: \(error)")
         }
+    }
+    
+    func getMockFromJson() {
+        guard let url = Bundle.main.url(forResource: "CompoundedMockResponse", withExtension: "json") else {
+            print("JSON file not found.")
+            return
+        }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode([Dividends].self, from: data)
+            
+            mockDividends = decoded
+            mockDividends[0].eventDate = .now
+        } catch {
+            print("Error loading or parsing JSON: \(error)")
+        }
+        
     }
     
 }

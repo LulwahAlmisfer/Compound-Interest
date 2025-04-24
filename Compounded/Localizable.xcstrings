@@ -392,6 +392,16 @@
         }
       }
     },
+    "No Announcements for Today" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد أحداث اليوم"
+          }
+        }
+      }
+    },
     "Non-Compounded" : {
       "localizations" : {
         "ar" : {
@@ -548,7 +558,19 @@
         }
       }
     },
+    "Today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اليوم"
+          }
+        }
+      }
+    },
     "Today's Announcements" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

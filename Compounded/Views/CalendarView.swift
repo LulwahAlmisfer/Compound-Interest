@@ -13,15 +13,13 @@ struct CalendarView: View {
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else {
+
                     ScrollView {
                         VStack(alignment: .leading, spacing: 24) {
                             
                             if !viewModel.getTodayAnnouncements().isEmpty {
                                 VStack(alignment: .leading, spacing: 12) {
-                                    Text("Today's Announcements")
+                                    Text("Today")
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                         .padding(.horizontal)
@@ -35,6 +33,10 @@ struct CalendarView: View {
                                         .padding(.horizontal)
                                     }
                                 }
+                            } else {
+                                Text("No Announcements for Today")
+                                    .padding(30)
+                                    .frame(maxWidth: .infinity, alignment: .center)
                             }
 
                             VStack(alignment: .leading, spacing: 8) {
@@ -44,14 +46,21 @@ struct CalendarView: View {
                                     .padding(.horizontal)
 
                                 LazyVStack(spacing: 0) {
-                                    ForEach(viewModel.dividends, id: \.id) { item in
+                                    ForEach(viewModel.getAllAnnouncements(), id: \.id) { item in
                                         VStack {
                                             HStack {
                                                 AsyncCircleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
 
                                                 VStack(alignment: .leading) {
-                                                    Text(item.companyName)
-                                                        .font(.headline)
+                                                    Group {
+                                                        if Helper.isArabic() {
+                                                            Text(item.companyName)
+                                                        } else {
+                                                            Text(item.companyNameEng ?? item.companyName)
+                                                        }
+                                                    }
+                                                    .lineLimit(1)
+                                                    .minimumScaleFactor(0.5)
                                                     Text(item.eventDate.formatDateInEnglish())
                                                         .font(.caption)
                                                         .foregroundColor(.gray)
@@ -74,7 +83,7 @@ struct CalendarView: View {
 
                                             }
                                             .padding(6)
-                                            .padding(.horizontal,4)
+                                            .padding(.horizontal,8)
 
                                             Divider()
                                                 .padding(.leading,40)
@@ -89,9 +98,9 @@ struct CalendarView: View {
                                 .padding(.horizontal)
                             }
                         }
+                        .shimmer(viewModel.isLoading ? .loading : .done)
                         .padding(.top)
                     }
-                }
             }
             .navigationTitle("Calendar")
         }
@@ -108,8 +117,20 @@ struct CompanyAnnouncementCardView: View {
             AsyncRoundedRectangleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
 
             VStack(alignment: .leading, spacing: 6) {
-                CompanyAnnouncementTagView(type: item.type)
-
+                
+                HStack {
+                    CompanyAnnouncementTagView(type: item.type)
+                    HStack {
+                        Text(item.amount.rounded(to: 2))
+                        Image("sar")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundStyle(Color("AccentColor"))
+                            .frame(width: 15,height: 15)
+                    }
+                    .font(.system(size: 12))
+                }
+                
                 Group {
                     if Helper.isArabic() {
                         Text(item.companyName)
@@ -117,6 +138,8 @@ struct CompanyAnnouncementCardView: View {
                         Text(item.companyNameEng ?? item.companyName)
                     }
                 }
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
                 .font(.subheadline)
                 .bold()
                 
@@ -125,18 +148,6 @@ struct CompanyAnnouncementCardView: View {
                     .font(.caption2)
 
             }
-            
-            Spacer()
-                        
-            HStack {
-                Text(item.amount.rounded(to: 2))
-                Image("sar")
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundStyle(Color("AccentColor"))
-                    .frame(width: 15,height: 15)
-            }
-            .font(.system(size: 12))
 
         }
         .padding()
@@ -153,7 +164,7 @@ struct CompanyAnnouncementTagView: View {
     var type :TypeEnum
     
     var body: some View {
-        HStack {
+        HStack(spacing: 3){
             Text(.init(type.title))
                 .bold()
             Image(systemName: type.imageTitle)
@@ -161,7 +172,9 @@ struct CompanyAnnouncementTagView: View {
         .font(.system(size: 10))
         .foregroundStyle(.white)
         .lineLimit(1)
+        .minimumScaleFactor(0.5)
         .padding(6)
+        .padding(.horizontal,4)
         .background(
             Capsule()
                 .fill(Color(type.color))

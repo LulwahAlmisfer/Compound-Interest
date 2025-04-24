@@ -50,9 +50,8 @@ struct AsyncRoundedRectangleCompanyLogoView: View {
                         .frame(width: UIScreen.main.bounds.width * 0.25)
 
                     Text(ticker)
-                        .bold()
                         .foregroundColor(.white)
-                        .font(.title2)
+                        .font(.title3)
                 }
             }
         }
@@ -101,7 +100,6 @@ struct AsyncCircleCompanyLogoView: View {
                         .frame(width: 30, height: 30)
 
                     Text(ticker)
-                        .bold()
                         .foregroundColor(.white)
                         .font(.caption2)
                         .minimumScaleFactor(0.5)
