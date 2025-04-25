@@ -1,0 +1,1152 @@
+{
+  "stocks": [
+    {
+      "symbol": "2222",
+      "title_en": "Saudi Arabian Oil Co."
+    },
+    {
+      "symbol": "2030",
+      "title_en": "Saudi Arabia Refineries Co."
+    },
+    {
+      "symbol": "4030",
+      "title_en": "National Shipping Company of Saudi Arabia"
+    },
+    {
+      "symbol": "4200",
+      "title_en": "Aldrees Petroleum and Transport Services Co."
+    },
+    {
+      "symbol": "1202",
+      "title_en": "Middle East Paper Co."
+    },
+    {
+      "symbol": "1301",
+      "title_en": "United Wire Factories Co."
+    },
+    {
+      "symbol": "1304",
+      "title_en": "Al Yamamah Steel Industries Co."
+    },
+    {
+      "symbol": "1320",
+      "title_en": "Saudi Steel Pipe Co."
+    },
+    {
+      "symbol": "2001",
+      "title_en": "Methanol Chemicals Co."
+    },
+    {
+      "symbol": "2020",
+      "title_en": "SABIC Agri-Nutrients Co."
+    },
+    {
+      "symbol": "2090",
+      "title_en": "National Gypsum Co."
+    },
+    {
+      "symbol": "2150",
+      "title_en": "The National Company for Glass Industries"
+    },
+    {
+      "symbol": "2170",
+      "title_en": "Alujain Corp."
+    },
+    {
+      "symbol": "2180",
+      "title_en": "Filing and Packing Materials Manufacturing Co."
+    },
+    {
+      "symbol": "2210",
+      "title_en": "Nama Chemicals Co."
+    },
+    {
+      "symbol": "2220",
+      "title_en": "National Metal Manufacturing and Casting Co."
+    },
+    {
+      "symbol": "2223",
+      "title_en": "Saudi Aramco Base Oil Co."
+    },
+    {
+      "symbol": "2250",
+      "title_en": "Saudi Industrial Investment Group"
+    },
+    {
+      "symbol": "2290",
+      "title_en": "Yanbu National Petrochemical Co."
+    },
+    {
+      "symbol": "2310",
+      "title_en": "Sahara International Petrochemical Co."
+    },
+    {
+      "symbol": "2330",
+      "title_en": "Advanced Petrochemical Co."
+    },
+    {
+      "symbol": "2350",
+      "title_en": "Saudi Kayan Petrochemical Co."
+    },
+    {
+      "symbol": "3001",
+      "title_en": "Company_3001"
+    },
+    {
+      "symbol": "3002",
+      "title_en": "Najran Cement Co."
+    },
+    {
+      "symbol": "3003",
+      "title_en": "City Cement Co."
+    },
+    {
+      "symbol": "3004",
+      "title_en": "Northern Region Cement Co."
+    },
+    {
+      "symbol": "3005",
+      "title_en": "Umm Al-Qura Cement Co."
+    },
+    {
+      "symbol": "3007",
+      "title_en": "Zahrat Al Waha for Trading Co."
+    },
+    {
+      "symbol": "3020",
+      "title_en": "Yamama Cement Co."
+    },
+    {
+      "symbol": "3030",
+      "title_en": "Saudi Cement Co."
+    },
+    {
+      "symbol": "3040",
+      "title_en": "Qassim Cement Co."
+    },
+    {
+      "symbol": "3060",
+      "title_en": "Yanbu Cement Co."
+    },
+    {
+      "symbol": "3080",
+      "title_en": "Eastern Province Cement Co."
+    },
+    {
+      "symbol": "3090",
+      "title_en": "Tabuk Cement Co."
+    },
+    {
+      "symbol": "3091",
+      "title_en": "Al Jouf Cement Co."
+    },
+    {
+      "symbol": "1214",
+      "title_en": "Al Hassan Ghazi Ibrahim Shaker Co."
+    },
+    {
+      "symbol": "1302",
+      "title_en": "Bawan Co."
+    },
+    {
+      "symbol": "1303",
+      "title_en": "Electrical Industries Co."
+    },
+    {
+      "symbol": "2040",
+      "title_en": "Saudi Ceramic Co."
+    },
+    {
+      "symbol": "2110",
+      "title_en": "Saudi Cable Co."
+    },
+    {
+      "symbol": "2160",
+      "title_en": "Saudi Arabian Amiantit Co."
+    },
+    {
+      "symbol": "2320",
+      "title_en": "Al-Babtain Power and Telecommunication Co."
+    },
+    {
+      "symbol": "2370",
+      "title_en": "Middle East Specialized Cables Co."
+    },
+    {
+      "symbol": "4110",
+      "title_en": "Batic Investments and Logistics Co."
+    },
+    {
+      "symbol": "4140",
+      "title_en": "Saudi Industrial Export Co."
+    },
+    {
+      "symbol": "4143",
+      "title_en": "Al Taiseer Group Talco Industrial Co."
+    },
+    {
+      "symbol": "1831",
+      "title_en": "Maharah Human Resources Co."
+    },
+    {
+      "symbol": "1832",
+      "title_en": "Sadr Logistics Co."
+    },
+    {
+      "symbol": "1834",
+      "title_en": "Saudi Manpower Solutions Co."
+    },
+    {
+      "symbol": "6004",
+      "title_en": "CATRION Catering Holding Co."
+    },
+    {
+      "symbol": "1833",
+      "title_en": "Al Mawarid Manpower Co."
+    },
+    {
+      "symbol": "4031",
+      "title_en": "Saudi Ground Services Co."
+    },
+    {
+      "symbol": "4040",
+      "title_en": "Saudi Public Transport Co."
+    },
+    {
+      "symbol": "4260",
+      "title_en": "United International Transportation Co."
+    },
+    {
+      "symbol": "2130",
+      "title_en": "Saudi Industrial Development Co."
+    },
+    {
+      "symbol": "2340",
+      "title_en": "ARTEX Industrial Investment Co."
+    },
+    {
+      "symbol": "4011",
+      "title_en": "Lazurde Company for Jewelry"
+    },
+    {
+      "symbol": "4012",
+      "title_en": "Thob Al Aseel Co."
+    },
+    {
+      "symbol": "4180",
+      "title_en": "Fitaihi Holding Group"
+    },
+    {
+      "symbol": "1810",
+      "title_en": "Seera Group Holding"
+    },
+    {
+      "symbol": "1820",
+      "title_en": "BAAN Holding Group Co."
+    },
+    {
+      "symbol": "4170",
+      "title_en": "Tourism Enterprise Co."
+    },
+    {
+      "symbol": "4290",
+      "title_en": "Alkhaleej Training and Education Co."
+    },
+    {
+      "symbol": "4291",
+      "title_en": "National Company for Learning and Education"
+    },
+    {
+      "symbol": "4292",
+      "title_en": "Ataa Educational Co."
+    },
+    {
+      "symbol": "6002",
+      "title_en": "Herfy Food Services Co."
+    },
+    {
+      "symbol": "6012",
+      "title_en": "Raydan Food Co."
+    },
+    {
+      "symbol": "6013",
+      "title_en": "Development Works Food Co."
+    },
+    {
+      "symbol": "6014",
+      "title_en": "Alamar Foods Co."
+    },
+    {
+      "symbol": "6015",
+      "title_en": "Americana Restaurants International PLC - Foreign Company"
+    },
+    {
+      "symbol": "4003",
+      "title_en": "United Electronics Co."
+    },
+    {
+      "symbol": "4008",
+      "title_en": "Saudi Company for Hardware"
+    },
+    {
+      "symbol": "4050",
+      "title_en": "Saudi Automotive Services Co."
+    },
+    {
+      "symbol": "4051",
+      "title_en": "Baazeem Trading Co."
+    },
+    {
+      "symbol": "4190",
+      "title_en": "Jarir Marketing Co."
+    },
+    {
+      "symbol": "4191",
+      "title_en": "Abdullah Saad Mohammed Abo Moati for Bookstores Co."
+    },
+    {
+      "symbol": "4192",
+      "title_en": "AlSaif Stores for Development and Investment Co."
+    },
+    {
+      "symbol": "4001",
+      "title_en": "Abdullah Al Othaim Markets Co."
+    },
+    {
+      "symbol": "4061",
+      "title_en": "Anaam International Holding Group"
+    },
+    {
+      "symbol": "4161",
+      "title_en": "BinDawood Holding Co."
+    },
+    {
+      "symbol": "4162",
+      "title_en": "Almunajem Foods Co."
+    },
+    {
+      "symbol": "4163",
+      "title_en": "Aldawaa Medical Services Co."
+    },
+    {
+      "symbol": "2100",
+      "title_en": "Wafrah for Industry and Development Co."
+    },
+    {
+      "symbol": "2270",
+      "title_en": "Saudia Dairy and Foodstuff Co."
+    },
+    {
+      "symbol": "2280",
+      "title_en": "Almarai Co."
+    },
+    {
+      "symbol": "2281",
+      "title_en": "Tanmiah Food Co."
+    },
+    {
+      "symbol": "2282",
+      "title_en": "Naqi Water Co."
+    },
+    {
+      "symbol": "2283",
+      "title_en": "First Milling Co."
+    },
+    {
+      "symbol": "6010",
+      "title_en": "National Agricultural Development Co."
+    },
+    {
+      "symbol": "6020",
+      "title_en": "Al Gassim Investment Holding Co."
+    },
+    {
+      "symbol": "6040",
+      "title_en": "Tabuk Agricultural Development Co."
+    },
+    {
+      "symbol": "2230",
+      "title_en": "Saudi Chemical Co."
+    },
+    {
+      "symbol": "4002",
+      "title_en": "Mouwasat Medical Services Co."
+    },
+    {
+      "symbol": "4004",
+      "title_en": "Dallah Healthcare Co."
+    },
+    {
+      "symbol": "4007",
+      "title_en": "Al Hammadi Holding"
+    },
+    {
+      "symbol": "4013",
+      "title_en": "Dr. Sulaiman Al Habib Medical Services Group"
+    },
+    {
+      "symbol": "4014",
+      "title_en": "Scientific and Medical Equipment House Co."
+    },
+    {
+      "symbol": "4015",
+      "title_en": "Jamjoom Pharmaceuticals Factory Co."
+    },
+    {
+      "symbol": "4016",
+      "title_en": "Middle East Pharmaceutical Industries Co."
+    },
+    {
+      "symbol": "1182",
+      "title_en": "Amlak International Finance Co."
+    },
+    {
+      "symbol": "1183",
+      "title_en": "SHL Finance Co."
+    },
+    {
+      "symbol": "2120",
+      "title_en": "Saudi Advanced Industries Co."
+    },
+    {
+      "symbol": "4081",
+      "title_en": "Nayifat Finance Co."
+    },
+    {
+      "symbol": "4130",
+      "title_en": "Al-Baha Investment and Development Co."
+    },
+    {
+      "symbol": "4082",
+      "title_en": "Morabaha Marina Financing Co."
+    },
+    {
+      "symbol": "7201",
+      "title_en": "Arab Sea Information System Co."
+    },
+    {
+      "symbol": "7202",
+      "title_en": "Arabian Internet and Communications Services Co."
+    },
+    {
+      "symbol": "7203",
+      "title_en": "Elm Co."
+    },
+    {
+      "symbol": "7204",
+      "title_en": "Perfect Presentation for Commercial Services Co."
+    },
+    {
+      "symbol": "7010",
+      "title_en": "Saudi Telecom Co."
+    },
+    {
+      "symbol": "7020",
+      "title_en": "Etihad Etisalat Co."
+    },
+    {
+      "symbol": "7030",
+      "title_en": "Mobile Telecommunication Company Saudi Arabia"
+    },
+    {
+      "symbol": "7040",
+      "title_en": "Etihad Atheeb Telecommunication Co."
+    },
+    {
+      "symbol": "2080",
+      "title_en": "National Gas and Industrialization Co."
+    },
+    {
+      "symbol": "2081",
+      "title_en": "Alkhorayef Water and Power Technologies Co."
+    },
+    {
+      "symbol": "2084",
+      "title_en": "Miahona Co."
+    },
+    {
+      "symbol": "4330",
+      "title_en": "Riyad REIT Fund"
+    },
+    {
+      "symbol": "4331",
+      "title_en": "AlJazira REIT"
+    },
+    {
+      "symbol": "4333",
+      "title_en": "Taleem REIT Fund"
+    },
+    {
+      "symbol": "4334",
+      "title_en": "AL Maather REIT Fund"
+    },
+    {
+      "symbol": "4335",
+      "title_en": "Musharaka REIT Fund"
+    },
+    {
+      "symbol": "4336",
+      "title_en": "Mulkia Gulf Real Estate REIT"
+    },
+    {
+      "symbol": "4337",
+      "title_en": "SICO Saudi REIT Fund"
+    },
+    {
+      "symbol": "4339",
+      "title_en": "Derayah REIT Fund"
+    },
+    {
+      "symbol": "4340",
+      "title_en": "Al Rajhi REIT Fund"
+    },
+    {
+      "symbol": "4342",
+      "title_en": "Jadwa REIT Saudi Fund"
+    },
+    {
+      "symbol": "4344",
+      "title_en": "SEDCO Capital REIT Fund"
+    },
+    {
+      "symbol": "4345",
+      "title_en": "Alinma Retail REIT Fund"
+    },
+    {
+      "symbol": "4347",
+      "title_en": "Bonyan REIT Fund"
+    },
+    {
+      "symbol": "4349",
+      "title_en": "Alinma Hospitality REIT Fund"
+    },
+    {
+      "symbol": "4090",
+      "title_en": "Taiba Investments Co."
+    },
+    {
+      "symbol": "4100",
+      "title_en": "Makkah Construction and Development Co."
+    },
+    {
+      "symbol": "4150",
+      "title_en": "Arriyadh Development Co."
+    },
+    {
+      "symbol": "4230",
+      "title_en": "Red Sea International Co."
+    },
+    {
+      "symbol": "4300",
+      "title_en": "Dar Alarkan Real Estate Development Co."
+    },
+    {
+      "symbol": "4310",
+      "title_en": "Knowledge Economic City"
+    },
+    {
+      "symbol": "4320",
+      "title_en": "Alandalus Property Co."
+    },
+    {
+      "symbol": "4321",
+      "title_en": "Arabian Centres Co."
+    },
+    {
+      "symbol": "4322",
+      "title_en": "Retal Urban Development Co."
+    },
+    {
+      "symbol": "4323",
+      "title_en": "Sumou Real Estate Co."
+    },
+    {
+      "symbol": "9513",
+      "title_en": "Watani Iron Steel Co."
+    },
+    {
+      "symbol": "9514",
+      "title_en": "Mohammed Hasan AlNaqool Sons Co."
+    },
+    {
+      "symbol": "9539",
+      "title_en": "Aqaseem Factory for Chemicals and Plastics Co."
+    },
+    {
+      "symbol": "9548",
+      "title_en": "Arabian Plastic Industrial Co."
+    },
+    {
+      "symbol": "9552",
+      "title_en": "Saudi Top for Trading Co."
+    },
+    {
+      "symbol": "9553",
+      "title_en": "Molan Steel Co."
+    },
+    {
+      "symbol": "9575",
+      "title_en": "Marble Design Co."
+    },
+    {
+      "symbol": "9576",
+      "title_en": "Paper Home Co."
+    },
+    {
+      "symbol": "9580",
+      "title_en": "Al Rashid Industrial Co."
+    },
+    {
+      "symbol": "9583",
+      "title_en": "United Mining Industries Co."
+    },
+    {
+      "symbol": "9588",
+      "title_en": "Riyadh Steel Co."
+    },
+    {
+      "symbol": "9599",
+      "title_en": "Taqat Mineral Trading Co."
+    },
+    {
+      "symbol": "9601",
+      "title_en": "Mohammed Hadi Al Rasheed and Partners Co."
+    },
+    {
+      "symbol": "9605",
+      "title_en": "Neft Alsharq Company for Chemical Industries"
+    },
+    {
+      "symbol": "9525",
+      "title_en": "Alwasail Industrial Co."
+    },
+    {
+      "symbol": "9528",
+      "title_en": "Gas Arabian Services Co."
+    },
+    {
+      "symbol": "9529",
+      "title_en": "Company_9529"
+    },
+    {
+      "symbol": "9531",
+      "title_en": "Obeikan Glass Co."
+    },
+    {
+      "symbol": "9533",
+      "title_en": "Saudi Parts Center Co."
+    },
+    {
+      "symbol": "9542",
+      "title_en": "Keir International Co."
+    },
+    {
+      "symbol": "9547",
+      "title_en": "Rawasi Albina Investment Co."
+    },
+    {
+      "symbol": "9569",
+      "title_en": "Almuneef Company for Trade, Industry, Agriculture and Contracting"
+    },
+    {
+      "symbol": "9578",
+      "title_en": "Atlas Elevators General Trading and Contracting Co."
+    },
+    {
+      "symbol": "9540",
+      "title_en": "National Environmental Recycling Co."
+    },
+    {
+      "symbol": "9545",
+      "title_en": "International Human Resources Co."
+    },
+    {
+      "symbol": "9570",
+      "title_en": "Tam Development Co."
+    },
+    {
+      "symbol": "9581",
+      "title_en": "Clean Life Co."
+    },
+    {
+      "symbol": "9577",
+      "title_en": "Dar Almarkabah for Renting Cars Co."
+    },
+    {
+      "symbol": "9520",
+      "title_en": "Company_9520"
+    },
+    {
+      "symbol": "9541",
+      "title_en": "Academy of Learning Co."
+    },
+    {
+      "symbol": "9562",
+      "title_en": "Foods Gate Trading Co."
+    },
+    {
+      "symbol": "9567",
+      "title_en": "Ghida Alsultan for Fast Food Co."
+    },
+    {
+      "symbol": "9522",
+      "title_en": "Alhasoob Co."
+    },
+    {
+      "symbol": "9551",
+      "title_en": "Knowledge Tower Trading Co."
+    },
+    {
+      "symbol": "9549",
+      "title_en": "Abdulaziz and Mansour Ibrahim Albabtin Co."
+    },
+    {
+      "symbol": "9592",
+      "title_en": "Almujtama Alraida Medical Co."
+    },
+    {
+      "symbol": "9515",
+      "title_en": "Fesh Fash Snack Food Production Co."
+    },
+    {
+      "symbol": "9532",
+      "title_en": "Aljouf Mineral Water Bottling Co."
+    },
+    {
+      "symbol": "9536",
+      "title_en": "Arabian Food and Dairy Factories Co."
+    },
+    {
+      "symbol": "9556",
+      "title_en": "Nofoth Food Products Co."
+    },
+    {
+      "symbol": "9559",
+      "title_en": "Balady Poultry Co."
+    },
+    {
+      "symbol": "9564",
+      "title_en": "Horizon Food Co."
+    },
+    {
+      "symbol": "9517",
+      "title_en": "MOBI Industry Co."
+    },
+    {
+      "symbol": "9518",
+      "title_en": "Canadian Medical Center Co."
+    },
+    {
+      "symbol": "9527",
+      "title_en": "AME Company for Medical Supplies"
+    },
+    {
+      "symbol": "9574",
+      "title_en": "Professional Medical Expertise Co."
+    },
+    {
+      "symbol": "9594",
+      "title_en": "Al-Modawat Specialized Medical Co."
+    },
+    {
+      "symbol": "9600",
+      "title_en": "Qomel Co."
+    },
+    {
+      "symbol": "9604",
+      "title_en": "Miral Dental Clinics Co."
+    },
+    {
+      "symbol": "9586",
+      "title_en": "Osool and Bakheet Investment Co."
+    },
+    {
+      "symbol": "9596",
+      "title_en": "Quara Finance Co."
+    },
+    {
+      "symbol": "9602",
+      "title_en": "Yaqeen Capital Co."
+    },
+    {
+      "symbol": "9524",
+      "title_en": "Advance International Company for Communication and Information Technology"
+    },
+    {
+      "symbol": "9534",
+      "title_en": "Saudi Azm for Communication and Information Technology Co."
+    },
+    {
+      "symbol": "9538",
+      "title_en": "Naseej for Technology Co."
+    },
+    {
+      "symbol": "9550",
+      "title_en": "Sure Global Tech Co."
+    },
+    {
+      "symbol": "9557",
+      "title_en": "Edarat Communication and Information Technology Co."
+    },
+    {
+      "symbol": "9558",
+      "title_en": "Alqemam for Computer Systems Co."
+    },
+    {
+      "symbol": "9561",
+      "title_en": "Knowledge Net Co."
+    },
+    {
+      "symbol": "9595",
+      "title_en": "WSM for Information Technology Co."
+    },
+    {
+      "symbol": "9300",
+      "title_en": "Alwaha REIT Fund"
+    },
+    {
+      "symbol": "9519",
+      "title_en": "Company_9519"
+    },
+    {
+      "symbol": "9521",
+      "title_en": "Enma AlRawabi Co."
+    },
+    {
+      "symbol": "9535",
+      "title_en": "Ladun Investment Co."
+    },
+    {
+      "symbol": "",
+      "title_en": "Company_"
+    },
+    {
+      "symbol": "2380",
+      "title_en": "Rabigh Refining and Petrochemical Co."
+    },
+    {
+      "symbol": "2381",
+      "title_en": "Arabian Drilling Co."
+    },
+    {
+      "symbol": "2382",
+      "title_en": "Ades Holding Co."
+    },
+    {
+      "symbol": "1210",
+      "title_en": "Basic Chemical Industries Co."
+    },
+    {
+      "symbol": "1211",
+      "title_en": "Saudi Arabian Mining Co."
+    },
+    {
+      "symbol": "1321",
+      "title_en": "East Pipes Integrated Company for Industry"
+    },
+    {
+      "symbol": "1322",
+      "title_en": "Almasane Alkobra Mining Co."
+    },
+    {
+      "symbol": "2010",
+      "title_en": "Saudi Basic Industries Corp."
+    },
+    {
+      "symbol": "2060",
+      "title_en": "National Industrialization Co."
+    },
+    {
+      "symbol": "2240",
+      "title_en": "Zamil Industrial Investment Co."
+    },
+    {
+      "symbol": "2300",
+      "title_en": "Saudi Paper Manufacturing Co."
+    },
+    {
+      "symbol": "2360",
+      "title_en": "Saudi Vitrified Clay Pipes Co."
+    },
+    {
+      "symbol": "3008",
+      "title_en": "Al Kathiri Holding Co."
+    },
+    {
+      "symbol": "3010",
+      "title_en": "Arabian Cement Co."
+    },
+    {
+      "symbol": "3050",
+      "title_en": "Southern Province Cement Co."
+    },
+    {
+      "symbol": "3092",
+      "title_en": "Riyadh Cement Co."
+    },
+    {
+      "symbol": "1212",
+      "title_en": "Astra Industrial Group"
+    },
+    {
+      "symbol": "4141",
+      "title_en": "Al-Omran Industrial Trading Co."
+    },
+    {
+      "symbol": "4142",
+      "title_en": "Riyadh Cables Group Co."
+    },
+    {
+      "symbol": "4270",
+      "title_en": "Saudi Printing and Packaging Co."
+    },
+    {
+      "symbol": "2190",
+      "title_en": "Sustained Infrastructure Holding Co."
+    },
+    {
+      "symbol": "4263",
+      "title_en": "SAL Saudi Logistics Services Co."
+    },
+    {
+      "symbol": "1213",
+      "title_en": "Naseej International Trading Co."
+    },
+    {
+      "symbol": "1830",
+      "title_en": "Leejam Sports Co."
+    },
+    {
+      "symbol": "4071",
+      "title_en": "Arabian Contracting Services Co."
+    },
+    {
+      "symbol": "4240",
+      "title_en": "Fawaz Abdulaziz Alhokair Co."
+    },
+    {
+      "symbol": "4006",
+      "title_en": "Saudi Marketing Co."
+    },
+    {
+      "symbol": "4160",
+      "title_en": "Thimar Development Holding Co."
+    },
+    {
+      "symbol": "4164",
+      "title_en": "Nahdi Medical Co."
+    },
+    {
+      "symbol": "2050",
+      "title_en": "Savola Group"
+    },
+    {
+      "symbol": "2284",
+      "title_en": "Modern Mills for Food Products Co."
+    },
+    {
+      "symbol": "4080",
+      "title_en": "Sinad Holding Co."
+    },
+    {
+      "symbol": "6001",
+      "title_en": "Halwani Bros. Co."
+    },
+    {
+      "symbol": "6050",
+      "title_en": "Saudi Fisheries Co."
+    },
+    {
+      "symbol": "6070",
+      "title_en": "Al-Jouf Agricultural Development Co."
+    },
+    {
+      "symbol": "6090",
+      "title_en": "Jazan Development and Investment Co."
+    },
+    {
+      "symbol": "2140",
+      "title_en": "AYYAN Investment Co."
+    },
+    {
+      "symbol": "4005",
+      "title_en": "National Medical Care Co."
+    },
+    {
+      "symbol": "4009",
+      "title_en": "Middle East Healthcare Co."
+    },
+    {
+      "symbol": "4017",
+      "title_en": "Dr. Soliman Abdel Kader Fakeeh Hospital Co."
+    },
+    {
+      "symbol": "2070",
+      "title_en": "Saudi Pharmaceutical Industries and Medical Appliances Corp."
+    },
+    {
+      "symbol": "1111",
+      "title_en": "Saudi Tadawul Group Holding Co."
+    },
+    {
+      "symbol": "7200",
+      "title_en": "Al Moammar Information Systems Co."
+    },
+    {
+      "symbol": "2082",
+      "title_en": "ACWA POWER Co."
+    },
+    {
+      "symbol": "2083",
+      "title_en": "The Power and Water Utility Company for Jubail and Yanbu"
+    },
+    {
+      "symbol": "5110",
+      "title_en": "Saudi Electricity Co."
+    },
+    {
+      "symbol": "4020",
+      "title_en": "Saudi Real Estate Co."
+    },
+    {
+      "symbol": "4220",
+      "title_en": "Emaar The Economic City"
+    },
+    {
+      "symbol": "4250",
+      "title_en": "Jabal Omar Development Co."
+    },
+    {
+      "symbol": "9563",
+      "title_en": "Bena Steel Industries Co."
+    },
+    {
+      "symbol": "9565",
+      "title_en": "Meyar Co."
+    },
+    {
+      "symbol": "9566",
+      "title_en": "Saudi Lime Industries Co."
+    },
+    {
+      "symbol": "9510",
+      "title_en": "National Building and Marketing Co."
+    },
+    {
+      "symbol": "9560",
+      "title_en": "Waja Co."
+    },
+    {
+      "symbol": "9571",
+      "title_en": "Munawla Cargo Co."
+    },
+    {
+      "symbol": "9584",
+      "title_en": "Riyal Investment and Development Co."
+    },
+    {
+      "symbol": "9526",
+      "title_en": "Company_9526"
+    },
+    {
+      "symbol": "9590",
+      "title_en": "Armah Sports Co."
+    },
+    {
+      "symbol": "9589",
+      "title_en": "Fad International Co."
+    },
+    {
+      "symbol": "9555",
+      "title_en": "Leen Alkhair Trading Co."
+    },
+    {
+      "symbol": "9579",
+      "title_en": "Intelligent Oud Company for Trading"
+    },
+    {
+      "symbol": "9530",
+      "title_en": "Arabian International Healthcare Holding Co."
+    },
+    {
+      "symbol": "9544",
+      "title_en": "Future Care Trading Co."
+    },
+    {
+      "symbol": "9546",
+      "title_en": "Naba Alsaha Medical Services Co."
+    },
+    {
+      "symbol": "9572",
+      "title_en": "Al-Razi Medical Co."
+    },
+    {
+      "symbol": "9587",
+      "title_en": "Lana Medical Co."
+    },
+    {
+      "symbol": "9585",
+      "title_en": "Mulkia Investment Co."
+    },
+    {
+      "symbol": "9543",
+      "title_en": "Saudi Networkers Services Co."
+    },
+    {
+      "symbol": "9516",
+      "title_en": "Natural Gas Distribution Co."
+    },
+    {
+      "symbol": "9591",
+      "title_en": "View United Real Estate Development Co."
+    },
+    {
+      "symbol": "1201",
+      "title_en": "Takween Advanced Industries Co."
+    },
+    {
+      "symbol": "2200",
+      "title_en": "Arabian Pipes Co."
+    },
+    {
+      "symbol": "4261",
+      "title_en": "Theeb Rent a Car Co."
+    },
+    {
+      "symbol": "4262",
+      "title_en": "Lumi Rental Co."
+    },
+    {
+      "symbol": "6060",
+      "title_en": "Ash-Sharqiyah Development Co."
+    },
+    {
+      "symbol": "9523",
+      "title_en": "Group Five Pipe Saudi Co."
+    },
+    {
+      "symbol": "9568",
+      "title_en": "Mayar Holding Co."
+    },
+    {
+      "symbol": "9593",
+      "title_en": "Pan Gulf Marketing Co."
+    },
+    {
+      "symbol": "9537",
+      "title_en": "Amwaj International Co."
+    },
+    {
+      "symbol": "4072",
+      "title_en": "MBC Group Co."
+    },
+    {
+      "symbol": "4210",
+      "title_en": "Saudi Research and Media Group"
+    },
+    {
+      "symbol": "4280",
+      "title_en": "Kingdom Holding Co."
+    }
+  ]
+}

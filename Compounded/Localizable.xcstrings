@@ -204,7 +204,29 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تاريخ التوزيع"
+            "value" : "توزيع أرباح"
+          }
+        }
+      }
+    },
+    "Dividend Distribution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توزيع أرباح"
+          }
+        }
+      }
+    },
+    "Dividend Entitlment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إستحقاق أرباح"
           }
         }
       }
@@ -462,6 +484,16 @@
         }
       }
     },
+    "Recent Announcements" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آخر الإعلانات"
+          }
+        }
+      }
+    },
     "Restart now" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -512,6 +544,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Length of time"
+          }
+        }
+      }
+    },
+    "Today's Announcements" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعلانات اليوم"
           }
         }
       }

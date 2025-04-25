@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9839702DBBAFD100B6EF18 /* symbols_and_titles_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98396F2DBBAFD100B6EF18 /* symbols_and_titles_en.json */; };
+		2F9839F02DBBB58300B6EF18 /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9839EF2DBBB58300B6EF18 /* StockInfo.swift */; };
 		2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */; };
 		2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */; };
 		2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */; };
@@ -15,7 +17,7 @@
 		2FFD5BF72DB4002000E85436 /* Dividends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BF62DB4002000E85436 /* Dividends.swift */; };
 		2FFD5BF92DB400AE00E85436 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BF82DB400AE00E85436 /* CalendarView.swift */; };
 		2FFD5BFB2DB4010100E85436 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */; };
-		2FFD5BFD2DB4089700E85436 /* AsyncCompanyLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BFC2DB4089700E85436 /* AsyncCompanyLogoView.swift */; };
+		2FFD5BFD2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BFC2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift */; };
 		319E32A526AB8760005C0920 /* CompoundedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319E32A426AB8760005C0920 /* CompoundedApp.swift */; };
 		319E32A926AB8762005C0920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319E32A826AB8762005C0920 /* Assets.xcassets */; };
 		319E32AC26AB8762005C0920 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319E32AB26AB8762005C0920 /* Preview Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F98396F2DBBAFD100B6EF18 /* symbols_and_titles_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = symbols_and_titles_en.json; sourceTree = "<group>"; };
+		2F9839EF2DBBB58300B6EF18 /* StockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfo.swift; sourceTree = "<group>"; };
 		2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestView.swift; sourceTree = "<group>"; };
 		2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestViewModel.swift; sourceTree = "<group>"; };
 		2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedTabView.swift; sourceTree = "<group>"; };
@@ -33,7 +37,7 @@
 		2FFD5BF62DB4002000E85436 /* Dividends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dividends.swift; sourceTree = "<group>"; };
 		2FFD5BF82DB400AE00E85436 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
-		2FFD5BFC2DB4089700E85436 /* AsyncCompanyLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCompanyLogoView.swift; sourceTree = "<group>"; };
+		2FFD5BFC2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRoundedRectangleCompanyLogoView.swift; sourceTree = "<group>"; };
 		319E32A126AB8760005C0920 /* Compounded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compounded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319E32A426AB8760005C0920 /* CompoundedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedApp.swift; sourceTree = "<group>"; };
 		319E32A826AB8762005C0920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */,
 				2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */,
+				2F98396F2DBBAFD100B6EF18 /* symbols_and_titles_en.json */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -78,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A00900022B407AE40061987A /* Utilities.swift */,
-				2FFD5BFC2DB4089700E85436 /* AsyncCompanyLogoView.swift */,
+				2FFD5BFC2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 				2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */,
 				2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */,
 				2FFD5BF62DB4002000E85436 /* Dividends.swift */,
+				2F9839EF2DBBB58300B6EF18 /* StockInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				319E32AC26AB8762005C0920 /* Preview Assets.xcassets in Resources */,
 				A0568C492B40865E0080B5F4 /* Localizable.xcstrings in Resources */,
 				319E32A926AB8762005C0920 /* Assets.xcassets in Resources */,
+				2F9839702DBBAFD100B6EF18 /* symbols_and_titles_en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,11 +219,12 @@
 			files = (
 				2FFD5BF92DB400AE00E85436 /* CalendarView.swift in Sources */,
 				A00900032B407AE40061987A /* Utilities.swift in Sources */,
+				2F9839F02DBBB58300B6EF18 /* StockInfo.swift in Sources */,
 				2FFD5BF72DB4002000E85436 /* Dividends.swift in Sources */,
 				2FFD5BF32DB3B27E00E85436 /* CompoundInterestResult.swift in Sources */,
 				A00900052B407AFA0061987A /* SettingsView.swift in Sources */,
 				2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */,
-				2FFD5BFD2DB4089700E85436 /* AsyncCompanyLogoView.swift in Sources */,
+				2FFD5BFD2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift in Sources */,
 				319E32A526AB8760005C0920 /* CompoundedApp.swift in Sources */,
 				2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */,
 				2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */,
