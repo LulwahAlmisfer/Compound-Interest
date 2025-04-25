@@ -14,6 +14,10 @@ class CalendarViewModel: ObservableObject {
     init() {
         fetchDividends()
     }
+    
+    func getTodayAnnouncements() -> [Dividends] {
+        dividends.filter { $0.eventDate.isToday }
+    }
 
     func fetchDividends() {
         guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/dividends/events") else {
@@ -23,17 +27,11 @@ class CalendarViewModel: ObservableObject {
         Task {
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
-                let decoded = try JSONDecoder().decode([Dividends].self, from: data)
-
-
-                let twoYearsAgo = Calendar.current.date(byAdding: .year, value: -2, to: Date()) ?? .distantPast
-                let filteredSorted = decoded
-                    .filter { $0.eventDate >= twoYearsAgo }
-                    .sorted { $0.eventDate < $1.eventDate }
-
+                let decodedDividends = try JSONDecoder().decode([Dividends].self, from: data)
 
                 await MainActor.run {
-                    self.dividends = filteredSorted
+                    self.dividends = decodedDividends
+                    self.getEngNamesFromJson()
                     self.isLoading = false
                 }
             } catch {
@@ -44,4 +42,27 @@ class CalendarViewModel: ObservableObject {
             }
         }
     }
+    
+    func getEngNamesFromJson() {
+        guard let url = Bundle.main.url(forResource: "symbols_and_titles_en", withExtension: "json") else {
+            print("JSON file not found.")
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode(StockInfoContainer.self, from: data)
+            
+            let symbolToNameMap = Dictionary(uniqueKeysWithValues: decoded.stocks.map { ($0.symbol, $0.title_en) })
+
+            for i in dividends.indices {
+                if let engName = symbolToNameMap[dividends[i].symbol] {
+                    dividends[i].companyNameEng = engName.removeCo()
+                }
+            }
+        } catch {
+            print("Error loading or parsing JSON: \(error)")
+        }
+    }
+    
 }

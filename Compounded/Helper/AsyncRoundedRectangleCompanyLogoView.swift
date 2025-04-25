@@ -8,7 +8,58 @@
 import SwiftUI
 import Combine
 
-struct AsyncCompanyLogoView: View {
+struct AsyncRoundedRectangleCompanyLogoView: View {
+    @StateObject private var loader = ImageLoader()
+
+    var ticker: String
+    var urlString: String
+
+    var body: some View {
+        Group {
+            if let image = loader.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } else if loader.hasFailed {
+                placeHolderView
+            } else {
+                ProgressView()
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.25)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .onAppear {
+            if let url = URL(string: urlString) {
+                loader.loadImage(from: url)
+            }
+        }
+        .onDisappear { loader.cancel() }
+    }
+
+    var placeHolderView: some View {
+        Group {
+            if UIImage(named: ticker) != nil {
+                Image(ticker)
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width * 0.25)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            } else {
+                ZStack {
+                   RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.gray.opacity(0.5))
+                        .frame(width: UIScreen.main.bounds.width * 0.25)
+
+                    Text(ticker)
+                        .bold()
+                        .foregroundColor(.white)
+                        .font(.title2)
+                }
+            }
+        }
+    }
+}
+
+struct AsyncCircleCompanyLogoView: View {
     @StateObject private var loader = ImageLoader()
 
     var ticker: String
@@ -27,7 +78,7 @@ struct AsyncCompanyLogoView: View {
             }
         }
         .frame(width: 30, height: 30)
-        .clipShape(Circle())
+        .clipShape(.circle)
         .onAppear {
             if let url = URL(string: urlString) {
                 loader.loadImage(from: url)
@@ -42,10 +93,10 @@ struct AsyncCompanyLogoView: View {
                 Image(ticker)
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .clipShape(Circle())
+                    .clipShape(.circle)
             } else {
                 ZStack {
-                    Circle()
+                   Circle()
                         .fill(Color.gray.opacity(0.5))
                         .frame(width: 30, height: 30)
 
@@ -53,6 +104,7 @@ struct AsyncCompanyLogoView: View {
                         .bold()
                         .foregroundColor(.white)
                         .font(.caption2)
+                        .minimumScaleFactor(0.5)
                 }
             }
         }

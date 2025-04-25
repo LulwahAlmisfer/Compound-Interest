@@ -45,6 +45,14 @@ extension Double {
         let a = formatter.string(from: NSNumber(value: self)) ?? ""
         return Double(a) ?? 0
     }
+    func rounded(to places: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = places
+        formatter.maximumFractionDigits = places
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
+    }
 }
 
 extension String {
@@ -63,6 +71,14 @@ struct Helper {
                 UIApplication.shared.open(appSettings)
             }
         }
+    }
+    static func isArabic() -> Bool {
+        if let local = Locale.current.language.languageCode?.identifier {
+            if local == "ar" {
+                return true
+            }
+        }
+        return false
     }
 }
 
@@ -129,5 +145,21 @@ extension String {
             "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9"
         ]
         return String(self.map { map[$0] ?? $0 })
+    }
+    
+    func removeCo() -> String {
+           return self.replacingOccurrences(of: "Co.", with: "")
+    }
+}
+
+extension Date {
+    var isToday: Bool {
+        Calendar.current.isDateInToday(self)
+    }
+    func formatDateInEnglish() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US") 
+        formatter.setLocalizedDateFormatFromTemplate("MMM d, yyyy")
+        return formatter.string(from: self)
     }
 }
