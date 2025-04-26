@@ -20,8 +20,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "جمعية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assembly"
           }
         }
       }
@@ -225,8 +231,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "توزيع أرباح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribution"
           }
         }
       }
@@ -236,8 +248,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "إستحقاق أرباح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ex Dividend"
           }
         }
       }
@@ -348,6 +366,9 @@
     "Key" : {
       "extractionState" : "manual"
     },
+    "Key 1" : {
+      "extractionState" : "manual"
+    },
     "Length of time" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -418,8 +439,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "غير عادية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extraordinary"
           }
         }
       }
@@ -439,8 +466,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "عادية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordinary"
           }
         }
       }
@@ -463,6 +496,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "أخرى"
+          }
+        }
+      }
+    },
+    "Past" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إنتهى"
           }
         }
       }
@@ -640,6 +683,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "مصممة واجهات"
+          }
+        }
+      }
+    },
+    "Upcoming" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "القادم"
           }
         }
       }

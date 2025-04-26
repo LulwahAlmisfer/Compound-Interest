@@ -25,6 +25,17 @@ class CalendarViewModel: ObservableObject {
         return isLoading ? mockDividends : dividends
     }
     
+    func getUpcomingAnnouncements() -> [Dividends] {
+        return getAllAnnouncements()
+            .filter { $0.eventDate >= .now }
+            .sorted { $0.eventDate < $1.eventDate }
+    }
+    
+    func getPastAnnouncements() -> [Dividends] {
+        return getAllAnnouncements()
+            .filter { $0.eventDate < .now }
+    }
+    
     func fetchDividends() {
         guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/dividends/events") else {
             return

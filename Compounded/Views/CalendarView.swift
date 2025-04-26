@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CalendarView: View {
     @StateObject private var viewModel = CalendarViewModel()
-
+    @State private var isUpcomingExpanded = true
+    @State private var isPastExpanded = true
     var body: some View {
         NavigationView {
             Group {
@@ -39,82 +40,111 @@ struct CalendarView: View {
                                     .frame(maxWidth: .infinity, alignment: .center)
                             }
 
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("Recent Announcements")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                    .padding(.horizontal)
-
-                                LazyVStack(spacing: 0) {
-                                    ForEach(viewModel.getAllAnnouncements(), id: \.id) { item in
-                                        VStack {
-                                            HStack {
-                                                AsyncCircleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
-
-                                                VStack(alignment: .leading) {
-                                                    Group {
-                                                        if Helper.isArabic() {
-                                                            Text(item.companyName)
-                                                        } else {
-                                                            Text(item.companyNameEng ?? item.companyName)
-                                                        }
-                                                    }
-                                                    .lineLimit(1)
-                                                    .minimumScaleFactor(0.5)
-                                                    HStack {
-                                                        Text(item.eventDate.formatDateInEnglish())
-                                                            .foregroundStyle(.secondary)
-                                                        
-                                                        if let type = item.holdingType {
-                                                            Text(.init(type.title))
-                                                                .foregroundStyle(.purple)
-                                                        }
-                                                    }
-                                                    .font(.caption2)
-
-                                                }
-
-                                                Spacer()
-
-                                                VStack(alignment:.trailing) {
-                                                    CompanyAnnouncementTagView(type: item.type)
-                                                    if item.type != .assembly {
-                                                        HStack {
-                                                            Text(item.amount.rounded(to: 2))
-                                                            Image("sar")
-                                                                .resizable()
-                                                                .renderingMode(.template)
-                                                                .foregroundStyle(Color("AccentColor"))
-                                                                .frame(width: 15,height: 15)
-                                                        }
-                                                        .font(.system(size: 10))
-                                                    }
-                                                }
-
-                                            }
-                                            .padding(6)
-                                            .padding(.horizontal,8)
-
-                                            Divider()
-                                                .padding(.leading,40)
-                                            
+                            Text("Recent Announcements")
+                                     .font(.title3)
+                                     .fontWeight(.semibold)
+                                     .padding(.horizontal)
+                            
+                            LazyVStack(spacing: 12) {
+                                // Upcoming Announcements
+                                DisclosureGroup("Upcoming", isExpanded: $isUpcomingExpanded) {
+                                    LazyVStack(spacing: 0) {
+                                        ForEach(viewModel.getUpcomingAnnouncements(), id: \.id) { item in
+                                            announcementRow(item: item)
                                         }
-                                        .padding(.vertical,2)
-                                        .background(Color(.systemGray6))
                                     }
+                                    .background(Color(.systemGroupedBackground))
+                                    .cornerRadius(12)
                                 }
-                                .background(Color(.systemGroupedBackground))
+                                .padding()
+                                .background(Color(.systemGray6))
                                 .cornerRadius(12)
-                                .padding(.horizontal)
+                                .animation(.easeInOut(duration: 0.5), value: isUpcomingExpanded)
+
+                                // Past Announcements
+                                DisclosureGroup("Past", isExpanded: $isPastExpanded) {
+                                    LazyVStack(spacing: 0) {
+                                        ForEach(viewModel.getPastAnnouncements(), id: \.id) { item in
+                                            announcementRow(item: item)
+                                        }
+                                    }
+                                    .background(Color(.systemGroupedBackground))
+                                    .cornerRadius(12)
+                                }
+                                .padding()
+                                .background(Color(.systemGray6))
+                                .cornerRadius(12)
+                                .animation(.easeInOut(duration: 0.5), value: isPastExpanded)
                             }
-                        }
+                            .tint(.white)
+                                .padding(.horizontal)
+                            }                        }
                         .shimmer(viewModel.isLoading ? .loading : .done)
                         .padding(.top)
                     }
+                    .navigationTitle("Calendar")
+
             }
-            .navigationTitle("Calendar")
-        }
+        
     }
+    
+    @ViewBuilder
+    private func announcementRow(item: Dividends) -> some View {
+        VStack {
+            HStack {
+                AsyncCircleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
+
+                VStack(alignment: .leading) {
+                    Group {
+                        if Helper.isArabic() {
+                            Text(item.companyName)
+                        } else {
+                            Text(item.companyNameEng ?? item.companyName)
+                        }
+                    }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    
+                    HStack {
+                        Text(item.eventDate.formatDateInEnglish())
+                            .foregroundStyle(.secondary)
+                        
+                        if let type = item.holdingType {
+                            Text(.init(type.title))
+                                .foregroundStyle(.purple)
+                        }
+                    }
+                    .font(.caption2)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing) {
+                    CompanyAnnouncementTagView(type: item.type)
+                    
+                    if item.type != .assembly {
+                        HStack {
+                            Text(item.amount.rounded(to: 2))
+                            Image("sar")
+                                .resizable()
+                                .renderingMode(.template)
+                                .foregroundStyle(Color("AccentColor"))
+                                .frame(width: 15, height: 15)
+                        }
+                        .font(.system(size: 10))
+                    }
+                }
+            }
+            .padding(4)
+            //.padding(.horizontal, 6)
+
+            Divider()
+                .padding(.leading, 40)
+        }
+        .padding(.vertical, 2)
+        .background(Color(.systemGray6))
+    }
+    
 }
 
 
