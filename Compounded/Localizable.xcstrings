@@ -4,6 +4,16 @@
     "" : {
 
     },
+    "All" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الكل"
+          }
+        }
+      }
+    },
     "Amount" : {
       "extractionState" : "stale",
       "localizations" : {

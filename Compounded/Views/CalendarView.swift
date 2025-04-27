@@ -40,11 +40,17 @@ struct CalendarView: View {
                                     .frame(maxWidth: .infinity, alignment: .center)
                             }
 
-                            Text("Recent Announcements")
-                                     .font(.title3)
-                                     .fontWeight(.semibold)
-                                     .padding(.horizontal)
-                            
+                            HStack {
+                                Text("Recent Announcements")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .padding(.horizontal)
+                                
+                                Spacer()
+                                
+                                picker
+                                
+                            }
                             LazyVStack(spacing: 12) {
                                 // Upcoming Announcements
                                 DisclosureGroup("Upcoming", isExpanded: $isUpcomingExpanded) {
@@ -56,6 +62,8 @@ struct CalendarView: View {
                                     .background(Color(.systemGroupedBackground))
                                     .cornerRadius(12)
                                 }
+                                .foregroundStyle(.primary)
+                                .tint(.primary)
                                 .padding()
                                 .background(Color(.systemGray6))
                                 .cornerRadius(12)
@@ -71,6 +79,8 @@ struct CalendarView: View {
                                     .background(Color(.systemGroupedBackground))
                                     .cornerRadius(12)
                                 }
+                                .foregroundStyle(.primary)
+                                .tint(.primary)
                                 .padding()
                                 .background(Color(.systemGray6))
                                 .cornerRadius(12)
@@ -136,14 +146,48 @@ struct CalendarView: View {
                 }
             }
             .padding(4)
-            //.padding(.horizontal, 6)
 
             Divider()
                 .padding(.leading, 40)
         }
-        .padding(.vertical, 2)
         .background(Color(.systemGray6))
     }
+    
+    
+    var picker: some View {
+        Menu {
+            Button {
+                withAnimation {
+                    DispatchQueue.main.async { viewModel.filter = nil }
+                }
+            } label: {
+                Text(LocalizedStringKey("All"))
+            }
+            
+            ForEach(TypeEnum.allCases, id: \.self) { type in
+                Button {
+                    withAnimation {
+                        DispatchQueue.main.async { viewModel.filter = type }
+                    }
+
+                } label: {
+                    Label(LocalizedStringKey(type.title), systemImage: type.imageTitle)
+                }
+            }
+        } label: {
+            if let filter = viewModel.filter {
+                Image(systemName: filter.imageTitle)
+                    .font(.headline)
+                    .padding()
+            } else {
+                Image(systemName:"slider.horizontal.3")
+                    .font(.headline)
+                    .padding()
+            }
+        }
+        .foregroundStyle(.primary)
+    }
+
     
 }
 
@@ -205,7 +249,6 @@ struct CompanyAnnouncementCardView: View {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color(.systemGray6))
         )
-        .shadow(radius: 2)
     }
 }
 

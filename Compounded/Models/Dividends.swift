@@ -66,7 +66,7 @@ struct Dividends: Codable, Identifiable {
 }
 
 
-enum TypeEnum: String, Codable {
+enum TypeEnum: String, Codable, CaseIterable {
     case distributionDate = "distributionDate"
     case dueDate = "dueDate"
     case assembly
@@ -120,3 +120,4 @@ enum holdingTypeEnum: String, Codable {
         }
     }
 }
+

@@ -11,7 +11,7 @@ class CalendarViewModel: ObservableObject {
     @Published var dividends: [Dividends] = []
     @Published var mockDividends: [Dividends] = []
     @Published var isLoading = true
-    
+    @Published var filter: TypeEnum? = nil
     init() {
         getMockFromJson()
         fetchDividends()
@@ -26,15 +26,25 @@ class CalendarViewModel: ObservableObject {
     }
     
     func getUpcomingAnnouncements() -> [Dividends] {
-        return getAllAnnouncements()
+        return applyFilter(on: getAllAnnouncements()
             .filter { $0.eventDate >= .now }
             .sorted { $0.eventDate < $1.eventDate }
+        )
+    }
+
+    func getPastAnnouncements() -> [Dividends] {
+        return applyFilter(on: getAllAnnouncements()
+            .filter { $0.eventDate < .now }
+        )
     }
     
-    func getPastAnnouncements() -> [Dividends] {
-        return getAllAnnouncements()
-            .filter { $0.eventDate < .now }
+    private func applyFilter(on list: [Dividends]) -> [Dividends] {
+        guard let selectedType = filter else {
+            return list
+        }
+        return list.filter { $0.type == selectedType }
     }
+    
     
     func fetchDividends() {
         guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/dividends/events") else {
