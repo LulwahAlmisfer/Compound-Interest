@@ -15,6 +15,17 @@
         }
       }
     },
+    "Assembly Meeting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جمعية"
+          }
+        }
+      }
+    },
     "Calculate" : {
       "localizations" : {
         "ar" : {
@@ -402,12 +413,34 @@
         }
       }
     },
+    "Non Normal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير عادية"
+          }
+        }
+      }
+    },
     "Non-Compounded" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "غير مركّب"
+          }
+        }
+      }
+    },
+    "Normal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عادية"
           }
         }
       }

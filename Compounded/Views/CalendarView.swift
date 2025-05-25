@@ -61,24 +61,34 @@ struct CalendarView: View {
                                                     }
                                                     .lineLimit(1)
                                                     .minimumScaleFactor(0.5)
-                                                    Text(item.eventDate.formatDateInEnglish())
-                                                        .font(.caption)
-                                                        .foregroundColor(.gray)
+                                                    HStack {
+                                                        Text(item.eventDate.formatDateInEnglish())
+                                                            .foregroundStyle(.secondary)
+                                                        
+                                                        if let type = item.holdingType {
+                                                            Text(.init(type.title))
+                                                                .foregroundStyle(.purple)
+                                                        }
+                                                    }
+                                                    .font(.caption2)
+
                                                 }
 
                                                 Spacer()
 
                                                 VStack(alignment:.trailing) {
                                                     CompanyAnnouncementTagView(type: item.type)
-                                                    HStack {
-                                                        Text(item.amount.rounded(to: 2))
-                                                        Image("sar")
-                                                            .resizable()
-                                                            .renderingMode(.template)
-                                                            .foregroundStyle(Color("AccentColor"))
-                                                            .frame(width: 15,height: 15)
+                                                    if item.type != .assembly {
+                                                        HStack {
+                                                            Text(item.amount.rounded(to: 2))
+                                                            Image("sar")
+                                                                .resizable()
+                                                                .renderingMode(.template)
+                                                                .foregroundStyle(Color("AccentColor"))
+                                                                .frame(width: 15,height: 15)
+                                                        }
+                                                        .font(.system(size: 10))
                                                     }
-                                                    .font(.system(size: 10))
                                                 }
 
                                             }
@@ -120,15 +130,18 @@ struct CompanyAnnouncementCardView: View {
                 
                 HStack {
                     CompanyAnnouncementTagView(type: item.type)
-                    HStack {
-                        Text(item.amount.rounded(to: 2))
-                        Image("sar")
-                            .resizable()
-                            .renderingMode(.template)
-                            .foregroundStyle(Color("AccentColor"))
-                            .frame(width: 15,height: 15)
+                    Spacer()
+                    if item.type != .assembly {
+                        HStack {
+                            Text(item.amount.rounded(to: 2))
+                            Image("sar")
+                                .resizable()
+                                .renderingMode(.template)
+                                .foregroundStyle(Color("AccentColor"))
+                                .frame(width: 15,height: 15)
+                        }
+                        .font(.system(size: 12))
                     }
-                    .font(.system(size: 12))
                 }
                 
                 Group {
@@ -143,10 +156,16 @@ struct CompanyAnnouncementCardView: View {
                 .font(.subheadline)
                 .bold()
                 
-                Text(item.eventDate.formatDateInEnglish())
-                    .foregroundStyle(.secondary)
-                    .font(.caption2)
-
+                HStack {
+                    Text(item.eventDate.formatDateInEnglish())
+                        .foregroundStyle(.secondary)
+                    
+                    if let type = item.holdingType {
+                        Text(.init(type.title))
+                            .foregroundStyle(.purple)
+                    }
+                }
+                .font(.caption2)
             }
 
         }
@@ -169,7 +188,7 @@ struct CompanyAnnouncementTagView: View {
                 .bold()
             Image(systemName: type.imageTitle)
         }
-        .font(.system(size: 10))
+        .font(.system(size: 12))
         .foregroundStyle(.white)
         .lineLimit(1)
         .minimumScaleFactor(0.5)
