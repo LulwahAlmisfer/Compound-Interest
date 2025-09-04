@@ -19,14 +19,15 @@ struct AsyncRoundedRectangleCompanyLogoView: View {
             if let image = loader.image {
                 Image(uiImage: image)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
             } else if loader.hasFailed {
                 placeHolderView
             } else {
                 ProgressView()
             }
         }
-        .frame(width: UIScreen.main.bounds.width * 0.25)
+        .frame(width: UIScreen.main.bounds.width * 0.25,height: UIScreen.main.bounds.width * 0.25)
+        .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .onAppear {
             if let url = URL(string: urlString) {
@@ -69,7 +70,7 @@ struct AsyncCircleCompanyLogoView: View {
             if let image = loader.image {
                 Image(uiImage: image)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
             } else if loader.hasFailed {
                 placeHolderView
             } else {
@@ -77,6 +78,7 @@ struct AsyncCircleCompanyLogoView: View {
             }
         }
         .frame(width: 30, height: 30)
+        .background(.white)
         .clipShape(.circle)
         .onAppear {
             if let url = URL(string: urlString) {

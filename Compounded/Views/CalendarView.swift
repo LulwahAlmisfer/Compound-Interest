@@ -24,7 +24,7 @@ struct CalendarView: View {
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                         .padding(.horizontal)
-
+                                    
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack(spacing: 16) {
                                             ForEach(viewModel.getTodayAnnouncements()) { announcement in
@@ -90,7 +90,6 @@ struct CalendarView: View {
                                 .padding(.horizontal)
                             }                        }
                         .shimmer(viewModel.isLoading ? .loading : .done)
-                        .padding(.top)
                     }
                     .navigationTitle("Calendar")
 
@@ -151,6 +150,15 @@ struct CalendarView: View {
                 .padding(.leading, 40)
         }
         .background(Color(.systemGray6))
+        .contextMenu {
+            Button("Add to Calendar") {
+                CalendarManager().addEvent(for: item) { success, error in
+                    if success {
+                        print("Event added 🎉")
+                    }
+                }
+            }
+        }
     }
     
     
@@ -273,4 +281,8 @@ struct CompanyAnnouncementTagView: View {
         )
         
     }
+}
+
+#Preview {
+    CompoundedTabView()
 }
