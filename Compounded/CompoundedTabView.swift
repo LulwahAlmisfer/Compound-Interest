@@ -11,17 +11,17 @@ import SwiftUI
 struct CompoundedTabView: View {
     var body: some View {
         TabView {
-            CalendarView()
-                .tabItem {
-                    Label("Calendar", systemImage: "calendar")
-                }
+           
             CompoundInterestView()
                 .tabItem {
                     Label("Calculator", systemImage: "chart.bar.fill")
                 }
 
-          
-
+            CalendarView()
+                .tabItem {
+                    Label("Calendar", systemImage: "calendar")
+                }
+            
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")

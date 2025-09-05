@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct CompoundedApp: App {
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    init() {
+        PushManager.shared.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
             CompoundedTabView()
                 .onAppear{ PickerStyle() }
         }
+        .modelContainer(for: [FavoriteCompany.self])
     }
 }

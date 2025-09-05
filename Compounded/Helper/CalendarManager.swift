@@ -46,9 +46,8 @@ class CalendarManager {
         event.startDate = startOfDay
         event.endDate = endOfDay
         event.isAllDay = true
-
         
-        event.notes = "Type: \(announcement.type.rawValue)"
+        event.notes =  announcement.amount != 0 ? "\(announcement.amount) SR" :  ""
         event.calendar = self.eventStore.defaultCalendarForNewEvents
         
         do {

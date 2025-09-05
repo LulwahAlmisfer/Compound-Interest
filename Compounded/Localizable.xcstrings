@@ -4,8 +4,25 @@
     "" : {
 
     },
+    "Add Notification" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة تنبيهات"
+          }
+        }
+      }
+    },
     "Add to Calendar" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة للتقويم"
+          }
+        }
+      }
     },
     "All" : {
       "localizations" : {
