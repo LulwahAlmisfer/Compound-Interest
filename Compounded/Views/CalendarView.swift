@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct CalendarView: View {
+    @ObservedObject private var pushManager = PushManager.shared
     @Query private var favorites: [FavoriteCompany]
     @StateObject private var viewModel = CalendarViewModel()
     @State private var isUpcomingExpanded = true
@@ -20,57 +21,7 @@ struct CalendarView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: 24) {
                             
-                            if favorites.isEmpty {
-                                VStack(spacing: 16) {
-                             
-                                    NavigationLink(destination: CompanyPickerView()) {
-                                        HStack {
-                                            Image(systemName: "bell.badge.fill")
-                                                .font(.title2)
-                                            Text("Add Notification")
-                                                .font(.headline)
-                                        }
-                                        .foregroundColor(.accentColor)
-                                        .padding()
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 12)
-                                                .strokeBorder(Color.accentColor.opacity(0.7), lineWidth: 1)
-                                        )
-                                    }
-                                }
-                                .padding(.horizontal)
-
-                            } else {
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        
-                                        ForEach(favorites) { fav in
-                                            HStack {
-                                                Image(systemName: "bell.badge.fill")
-                                                    .foregroundColor(.accentColor)
-                                                Text(Helper.isArabic() ? fav.nameAr : fav.nameEn)
-                                            }
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.5)
-                                            .padding()
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .fill(Color(.systemGray6))
-                                            )
-                                        }
-                                        
-                                        NavigationLink(destination: CompanyPickerView()) {
-                                            
-                                            Image(systemName: "plus.circle.fill")
-                                                .font(.title2)
-                                                .foregroundColor(.accentColor)
-                                        }
-                                    }
-                                }
-                                .padding(.horizontal)
-
-                            }
+                            notificationView
                             
                             if !viewModel.getTodayAnnouncements().isEmpty {
                                 VStack(alignment: .leading, spacing: 12) {
@@ -250,6 +201,89 @@ struct CalendarView: View {
         .foregroundStyle(.primary)
     }
 
+    var notificationView: some View {
+        Group {
+            switch pushManager.state {
+            case .notDetermined:
+                // ⏳ Not asked yet
+                VStack(spacing: 16) {
+                    Button {
+                        pushManager.registerForPushNotifications()
+                    } label: {
+                        Label("Allow Notifications", systemImage: "bell.badge.fill")
+                            .font(.headline)
+                            .foregroundColor(.accentColor)
+                    }
+                }
+                .padding(.horizontal)
+
+            case .denied:
+                // ❌ Denied by user
+                VStack(spacing: 16) {
+                    Button {
+                        pushManager.openSettings()
+                    } label: {
+                        Label("Enable Notifications in Settings", systemImage: "gear")
+                            .font(.headline)
+                            .foregroundColor(.accentColor)
+                    }
+                }
+                .padding(.horizontal)
+
+            case .authorized:
+                // ✅ Authorized → show your favorites logic
+                if favorites.isEmpty {
+                    VStack(spacing: 16) {
+                        NavigationLink(destination: CompanyPickerView()) {
+                            Label("Add Notification", systemImage: "bell.badge.fill")
+                                .font(.headline)
+                                .foregroundColor(.accentColor)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .strokeBorder(Color.accentColor.opacity(0.7), lineWidth: 1)
+                                )
+                        }
+                    }
+                    .padding(.horizontal)
+                } else {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(favorites) { fav in
+                                HStack {
+                                    Image(systemName: "bell.badge.fill")
+                                        .foregroundColor(.accentColor)
+                                    Text(Helper.isArabic() ? fav.nameAr : fav.nameEn)
+                                }
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(.systemGray6))
+                                )
+                            }
+                            
+                            NavigationLink(destination: CompanyPickerView()) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.accentColor)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .padding(.top)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            pushManager.configure()
+        }
+        .onAppear {
+            pushManager.configure()
+        }
+    }
     
 }
 

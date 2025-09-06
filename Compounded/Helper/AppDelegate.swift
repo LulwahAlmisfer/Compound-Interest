@@ -39,6 +39,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .list, .sound, .badge])
     }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        PushManager.shared.configure()
+    }
 }
 
 import UIKit

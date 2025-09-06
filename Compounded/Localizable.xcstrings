@@ -34,6 +34,16 @@
         }
       }
     },
+    "Allow Notifications" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السماح بالإشعارات"
+          }
+        }
+      }
+    },
     "Amount" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -300,6 +310,9 @@
           }
         }
       }
+    },
+    "Enable Notifications in Settings" : {
+
     },
     "Future Value" : {
       "extractionState" : "stale",
