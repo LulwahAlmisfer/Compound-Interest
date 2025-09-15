@@ -10,6 +10,7 @@ import SwiftData
 
 struct CalendarView: View {
     @ObservedObject private var pushManager = PushManager.shared
+    @Environment(\.modelContext) private var modelContext
     @Query private var favorites: [FavoriteCompany]
     @StateObject private var viewModel = CalendarViewModel()
     @State private var isUpcomingExpanded = true
@@ -160,6 +161,35 @@ struct CalendarView: View {
                 CalendarManager().addEvent(for: item) { success, error in
                     if success {
                         print("Event added 🎉")
+                    }
+                }
+            }
+            
+            Button("Add Notification") {
+                Task {
+                    do {
+                        guard let tokenmanagerDeviceToken = pushManager.deviceToken else {
+                            print("❌ No device token available.")
+                            return
+                        }
+                        try await pushManager.subscribeToCompany(
+                            deviceToken: tokenmanagerDeviceToken,
+                            companySymbol: item.symbol
+                        )
+                        
+                        let favorite = FavoriteCompany(
+                            id: item.symbol,
+                            nameAr: item.companyName,
+                            nameEn: item.companyNameEng ?? item.companyName
+                        )
+                        
+                        modelContext.insert(favorite)
+                        try modelContext.save()
+                        
+                        
+                        print("✅ Subscribed to \(item.companyName)")
+                    } catch {
+                        print("❌ Failed to subscribe: \(error)")
                     }
                 }
             }

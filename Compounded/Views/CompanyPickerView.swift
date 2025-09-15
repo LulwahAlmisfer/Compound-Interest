@@ -59,7 +59,10 @@ struct CompanyPickerView: View {
     
     var filteredCompanies: [Company] {
         if search.isEmpty { return companies }
-        return companies.filter { $0.companyShortNameEn.lowercased().contains(search.lowercased()) }
+        return companies.filter { $0.companyShortNameEn.lowercased().contains(search.lowercased()) ||
+            $0.companyShortNameAr.lowercased().contains(search.lowercased()) ||
+            $0.id.lowercased().contains(search.lowercased())
+        }
     }
     
     private func loadCompanies() async {
@@ -86,6 +89,8 @@ struct Company: Codable, Identifiable {
 }
 
 #Preview {
-    CompanyPickerView()
+    NavigationStack{
+        CompanyPickerView()
+    }
 }
 
