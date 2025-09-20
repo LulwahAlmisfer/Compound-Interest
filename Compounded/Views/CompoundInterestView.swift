@@ -75,23 +75,29 @@ struct CompoundInterestView: View {
                         VStack {
                             
                             
-                            Chart {
-                                ForEach(viewModel.chartData) { entry in
-                                    BarMark(
-                                        x: .value("Year", String(entry.year)),
-                                        y: .value("Value", entry.value)
-                                    )
-                                    .position(by: .value("Type", entry.type))
-                                    .foregroundStyle(
-                                        entry.type == "Non-Compounded" ? Color.green :
-                                            entry.type == "Compounded" ? Color.accentColor : Color.blue
-                                    )
+                            ScrollView(.horizontal) {
+                                Chart {
+                                    ForEach(viewModel.chartData) { entry in
+                                        BarMark(
+                                            x: .value("Year", String(entry.year)),
+                                            y: .value("Value", entry.value)
+                                        )
+                                        .position(by: .value("Type", entry.type))
+                                        .foregroundStyle(
+                                            entry.type == "Non-Compounded" ? Color.green :
+                                                entry.type == "Compounded" ? Color.accentColor : Color.blue
+                                        )
+                                    }
                                 }
+                                .environment(\.locale, .init(identifier: "en"))
+                                .chartLegend(position: .top, alignment: .center)
+                                .frame(height: 350)
+
+                                .frame(minWidth: CGFloat(viewModel.chartData.count) * 20)
                             }
-                            .environment(\.locale, .init(identifier: "en"))
-                            .chartLegend(position: .top, alignment: .center)
-                            .frame(height: 300)
-                            .padding(.bottom)
+                            .padding()
+
+
                             
                             
                             HStack {
