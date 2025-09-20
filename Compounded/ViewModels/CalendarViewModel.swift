@@ -47,6 +47,8 @@ class CalendarViewModel: ObservableObject {
     
     
     func fetchDividends() {
+        self.isLoading = true
+        
         guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/dividends/events") else {
             return
         }

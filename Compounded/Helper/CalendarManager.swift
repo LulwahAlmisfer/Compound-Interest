@@ -48,6 +48,11 @@ class CalendarManager {
         event.isAllDay = true
         
         event.notes =  announcement.amount != 0 ? "\(announcement.amount) SR" :  ""
+        
+        if announcement.type == .assembly {
+            event.notes =  announcement.holdingSite
+        }
+        
         event.calendar = self.eventStore.defaultCalendarForNewEvents
         
         do {

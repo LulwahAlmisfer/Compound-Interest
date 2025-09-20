@@ -2,7 +2,7 @@
   "stocks": [
     {
       "symbol": "2222",
-      "title_en": "Saudi Arabian Oil Co."
+      "title_en": "Aramco"
     },
     {
       "symbol": "2030",
@@ -278,7 +278,7 @@
     },
     {
       "symbol": "6015",
-      "title_en": "Americana Restaurants International PLC - Foreign Company"
+      "title_en": "Americana"
     },
     {
       "symbol": "4003",
@@ -306,15 +306,15 @@
     },
     {
       "symbol": "4192",
-      "title_en": "AlSaif Stores for Development and Investment Co."
+      "title_en": "AlSaif"
     },
     {
       "symbol": "4001",
-      "title_en": "Abdullah Al Othaim Markets Co."
+      "title_en": "Al Othaim Markets Co."
     },
     {
       "symbol": "4061",
-      "title_en": "Anaam International Holding Group"
+      "title_en": "Anaam"
     },
     {
       "symbol": "4161",
@@ -382,7 +382,7 @@
     },
     {
       "symbol": "4013",
-      "title_en": "Dr. Sulaiman Al Habib Medical Services Group"
+      "title_en": "Al Habib Medical Services Group"
     },
     {
       "symbol": "4014",
@@ -390,7 +390,7 @@
     },
     {
       "symbol": "4015",
-      "title_en": "Jamjoom Pharmaceuticals Factory Co."
+      "title_en": "Jamjoom"
     },
     {
       "symbol": "4016",
@@ -450,7 +450,7 @@
     },
     {
       "symbol": "7040",
-      "title_en": "Etihad Atheeb Telecommunication Co."
+      "title_en": "Etihad Atheeb Co."
     },
     {
       "symbol": "2080",
@@ -625,10 +625,6 @@
       "title_en": "Gas Arabian Services Co."
     },
     {
-      "symbol": "9529",
-      "title_en": "Company_9529"
-    },
-    {
       "symbol": "9531",
       "title_en": "Obeikan Glass Co."
     },
@@ -646,7 +642,7 @@
     },
     {
       "symbol": "9569",
-      "title_en": "Almuneef Company for Trade, Industry, Agriculture and Contracting"
+      "title_en": "Almuneef"
     },
     {
       "symbol": "9578",
@@ -710,7 +706,7 @@
     },
     {
       "symbol": "9532",
-      "title_en": "Aljouf Mineral Water Bottling Co."
+      "title_en": "Aljouf."
     },
     {
       "symbol": "9536",

@@ -16,6 +16,12 @@
 		2FBB12D42E6B29860030BB6A /* FavoriteCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB12D32E6B29850030BB6A /* FavoriteCompany.swift */; };
 		2FD089022DBA788F00B40BFD /* CompoundedMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FD089012DBA788F00B40BFD /* CompoundedMockResponse.json */; };
 		2FD089432DBA797E00B40BFD /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD089422DBA797E00B40BFD /* Shimmer.swift */; };
+		2FDE332D2E7F347A00B89420 /* CompanyPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE332C2E7F347A00B89420 /* CompanyPickerViewModel.swift */; };
+		2FDE332F2E7F349300B89420 /* CompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE332E2E7F349300B89420 /* CompanyResponse.swift */; };
+		2FDE33312E7F35D700B89420 /* StyledDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33302E7F35D700B89420 /* StyledDisclosureGroup.swift */; };
+		2FDE33332E7F362B00B89420 /* CompanyAnnouncementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */; };
+		2FDE33352E7F364600B89420 /* CompanyAnnouncementTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */; };
+		2FDE33442E7F36A900B89420 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33432E7F36A900B89420 /* ToastView.swift */; };
 		2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */; };
 		2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */; };
 		2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */; };
@@ -45,6 +51,12 @@
 		2FD089012DBA788F00B40BFD /* CompoundedMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CompoundedMockResponse.json; sourceTree = "<group>"; };
 		2FD089422DBA797E00B40BFD /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		2FD089C22DE38DDB00B40BFD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2FDE332C2E7F347A00B89420 /* CompanyPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPickerViewModel.swift; sourceTree = "<group>"; };
+		2FDE332E2E7F349300B89420 /* CompanyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyResponse.swift; sourceTree = "<group>"; };
+		2FDE33302E7F35D700B89420 /* StyledDisclosureGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledDisclosureGroup.swift; sourceTree = "<group>"; };
+		2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAnnouncementCardView.swift; sourceTree = "<group>"; };
+		2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAnnouncementTagView.swift; sourceTree = "<group>"; };
+		2FDE33432E7F36A900B89420 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestView.swift; sourceTree = "<group>"; };
 		2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestViewModel.swift; sourceTree = "<group>"; };
 		2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedTabView.swift; sourceTree = "<group>"; };
@@ -78,6 +90,9 @@
 		2FFD5BEE2DB3B1EB00E85436 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FDE33432E7F36A900B89420 /* ToastView.swift */,
+				2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */,
+				2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */,
 				2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */,
 				2FFD5BF82DB400AE00E85436 /* CalendarView.swift */,
 				A00900042B407AFA0061987A /* SettingsView.swift */,
@@ -89,6 +104,7 @@
 		2FFD5BEF2DB3B20900E85436 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2FDE332C2E7F347A00B89420 /* CompanyPickerViewModel.swift */,
 				2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */,
 				2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */,
 				2F98396F2DBBAFD100B6EF18 /* symbols_and_titles_en.json */,
@@ -100,6 +116,7 @@
 		2FFD5BF02DB3B22900E85436 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2FDE33302E7F35D700B89420 /* StyledDisclosureGroup.swift */,
 				A00900022B407AE40061987A /* Utilities.swift */,
 				2FFD5BFC2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift */,
 				2FD089422DBA797E00B40BFD /* Shimmer.swift */,
@@ -112,6 +129,7 @@
 		2FFD5BF12DB3B26A00E85436 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2FDE332E2E7F349300B89420 /* CompanyResponse.swift */,
 				2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */,
 				2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */,
 				2FFD5BF62DB4002000E85436 /* Dividends.swift */,
@@ -243,10 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDE33352E7F364600B89420 /* CompanyAnnouncementTagView.swift in Sources */,
 				2FFD5BF92DB400AE00E85436 /* CalendarView.swift in Sources */,
 				A00900032B407AE40061987A /* Utilities.swift in Sources */,
 				2F9839F02DBBB58300B6EF18 /* StockInfo.swift in Sources */,
 				2FD089432DBA797E00B40BFD /* Shimmer.swift in Sources */,
+				2FDE332D2E7F347A00B89420 /* CompanyPickerViewModel.swift in Sources */,
 				2FFD5BF72DB4002000E85436 /* Dividends.swift in Sources */,
 				2FFD5BF32DB3B27E00E85436 /* CompoundInterestResult.swift in Sources */,
 				A00900052B407AFA0061987A /* SettingsView.swift in Sources */,
@@ -255,13 +275,17 @@
 				2FBB08852E699C370030BB6A /* AppDelegate.swift in Sources */,
 				2FFD5BFD2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift in Sources */,
 				2FBB08832E6998B60030BB6A /* CalendarManager.swift in Sources */,
+				2FDE33442E7F36A900B89420 /* ToastView.swift in Sources */,
 				319E32A526AB8760005C0920 /* CompoundedApp.swift in Sources */,
 				2FBB12D42E6B29860030BB6A /* FavoriteCompany.swift in Sources */,
 				2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */,
 				2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */,
+				2FDE332F2E7F349300B89420 /* CompanyResponse.swift in Sources */,
 				2FFD5BFB2DB4010100E85436 /* CalendarViewModel.swift in Sources */,
+				2FDE33312E7F35D700B89420 /* StyledDisclosureGroup.swift in Sources */,
 				2FBB12D02E6B0A690030BB6A /* SubscriptionRequest.swift in Sources */,
 				2FFD5BF52DB3B29300E85436 /* ChartEntry.swift in Sources */,
+				2FDE33332E7F362B00B89420 /* CompanyAnnouncementCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

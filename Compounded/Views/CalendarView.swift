@@ -8,107 +8,104 @@
 import SwiftUI
 import SwiftData
 
+
 struct CalendarView: View {
     @ObservedObject private var pushManager = PushManager.shared
     @Environment(\.modelContext) private var modelContext
     @Query private var favorites: [FavoriteCompany]
     @StateObject private var viewModel = CalendarViewModel()
     @State private var isUpcomingExpanded = true
-    @State private var isPastExpanded = true
+    @State private var isPastExpanded = false
+    
+    @State private var showToast = false
+    @State private var toastMessage = ""
+    @State private var toastSuccess = true
     
     var body: some View {
         NavigationView {
-            Group {
-                    ScrollView {
-                        LazyVStack(alignment: .leading, spacing: 24) {
-                            
-                            notificationView
-                            
-                            if !viewModel.getTodayAnnouncements().isEmpty {
-                                VStack(alignment: .leading, spacing: 12) {
-                                    Text("Today")
-                                        .font(.title2)
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal)
-                                    
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 16) {
-                                            ForEach(viewModel.getTodayAnnouncements()) { announcement in
-                                                CompanyAnnouncementCardView(item: announcement)
-                                            }
-                                        }
-                                        .padding(.horizontal)
-                                    }
-                                }
-                            } else {
-                                Text("No Announcements for Today")
-                                    .padding(30)
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                            }
-
-                            HStack {
-                                Text("Recent Announcements")
-                                    .font(.title3)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    
+                    notificationView
+                    
+                    Group {
+                        if !viewModel.getTodayAnnouncements().isEmpty {
+                            VStack(alignment: .leading, spacing: 12) {
+                                Text("Today")
+                                    .font(.title2)
                                     .fontWeight(.semibold)
                                     .padding(.horizontal)
                                 
-                                Spacer()
-                                
-                                picker
-                                
-                            }
-                            LazyVStack(spacing: 12) {
-                                // Upcoming Announcements
-                                DisclosureGroup("Upcoming", isExpanded: $isUpcomingExpanded) {
-                                    LazyVStack(spacing: 0) {
-                                        ForEach(viewModel.getUpcomingAnnouncements(), id: \.id) { item in
-                                            announcementRow(item: item)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 16) {
+                                        ForEach(viewModel.getTodayAnnouncements()) { announcement in
+                                            CompanyAnnouncementCardView(item: announcement)
                                         }
                                     }
-                                    .background(Color(.systemGroupedBackground))
-                                    .cornerRadius(12)
+                                    .padding(.horizontal)
                                 }
-                                .foregroundStyle(.primary)
-                                .tint(.primary)
-                                .padding()
-                                .background(Color(.systemGray6))
-                                .cornerRadius(12)
-                                .animation(.easeInOut(duration: 0.5), value: isUpcomingExpanded)
-
-                                // Past Announcements
-                                DisclosureGroup("Past", isExpanded: $isPastExpanded) {
-                                    LazyVStack(spacing: 0) {
-                                        ForEach(viewModel.getPastAnnouncements(), id: \.id) { item in
-                                            announcementRow(item: item)
-                                        }
-                                    }
-                                    .background(Color(.systemGroupedBackground))
-                                    .cornerRadius(12)
-                                }
-                                .foregroundStyle(.primary)
-                                .tint(.primary)
-                                .padding()
-                                .background(Color(.systemGray6))
-                                .cornerRadius(12)
-                                .animation(.easeInOut(duration: 0.5), value: isPastExpanded)
                             }
-                            .tint(.white)
+                        } else {
+                            Text("No Announcements for Today")
+                                .padding(30)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        
+                        HStack {
+                            Text("Recent Announcements")
+                                .font(.title3)
+                                .fontWeight(.semibold)
                                 .padding(.horizontal)
-                            }                        }
-                        .shimmer(viewModel.isLoading ? .loading : .done)
+                            
+                            Spacer()
+                            
+                            picker
+                        }
+                        
+                        LazyVStack(spacing: 12) {
+                            StyledDisclosureGroup("Upcoming", isExpanded: $isUpcomingExpanded) {
+                                LazyVStack(spacing: 0) {
+                                    ForEach(viewModel.getUpcomingAnnouncements(), id: \.id) { item in
+                                        announcementRow(item: item)
+                                    }
+                                }
+                            }
+                            
+                            StyledDisclosureGroup("Past", isExpanded: $isPastExpanded) {
+                                LazyVStack(spacing: 0) {
+                                    ForEach(viewModel.getPastAnnouncements(), id: \.id) { item in
+                                        announcementRow(item: item)
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        .tint(.white)
                     }
-                    .navigationTitle("Calendar")
-
+                    .shimmer(viewModel.isLoading ? .loading : .done)
+                }
             }
-        
+            .navigationTitle("Calendar")
+            .overlay(alignment: .bottom) {
+                if showToast {
+                    ToastView(message: toastMessage, success: toastSuccess)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation { showToast = false }
+                            }
+                        }
+                }
+            }
+        }
+        .refreshable { viewModel.fetchDividends() }
     }
     
-    @ViewBuilder
     private func announcementRow(item: Dividends) -> some View {
         VStack {
             HStack {
                 AsyncCircleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
-
+                
                 VStack(alignment: .leading) {
                     Group {
                         if Helper.isArabic() {
@@ -131,9 +128,9 @@ struct CalendarView: View {
                     }
                     .font(.caption2)
                 }
-
+                
                 Spacer()
-
+                
                 VStack(alignment: .trailing) {
                     CompanyAnnouncementTagView(type: item.type)
                     
@@ -151,16 +148,17 @@ struct CalendarView: View {
                 }
             }
             .padding(4)
-
-            Divider()
-                .padding(.leading, 40)
+            
+            Divider().padding(.leading, 40)
         }
         .background(Color(.systemGray6))
         .contextMenu {
             Button("Add to Calendar") {
-                CalendarManager().addEvent(for: item) { success, error in
-                    if success {
-                        print("Event added 🎉")
+                CalendarManager().addEvent(for: item) { success, _ in
+                    withAnimation {
+                        toastMessage = success ? "Event added 🎉" : "Failed to add event"
+                        toastSuccess = success
+                        showToast = true
                     }
                 }
             }
@@ -168,12 +166,16 @@ struct CalendarView: View {
             Button("Add Notification") {
                 Task {
                     do {
-                        guard let tokenmanagerDeviceToken = pushManager.deviceToken else {
-                            print("❌ No device token available.")
+                        guard let token = pushManager.deviceToken else {
+                            withAnimation {
+                                toastMessage = "❌ No device token available."
+                                toastSuccess = false
+                                showToast = true
+                            }
                             return
                         }
                         try await pushManager.subscribeToCompany(
-                            deviceToken: tokenmanagerDeviceToken,
+                            deviceToken: token,
                             companySymbol: item.symbol
                         )
                         
@@ -182,60 +184,31 @@ struct CalendarView: View {
                             nameAr: item.companyName,
                             nameEn: item.companyNameEng ?? item.companyName
                         )
-                        
                         modelContext.insert(favorite)
                         try modelContext.save()
                         
-                        
-                        print("✅ Subscribed to \(item.companyName)")
+                        withAnimation {
+                            toastMessage = "✅ Subscribed to \(item.companyName)"
+                            toastSuccess = true
+                            showToast = true
+                        }
                     } catch {
-                        print("❌ Failed to subscribe: \(error)")
+                        withAnimation {
+                            toastMessage = "❌ Failed to subscribe"
+                            toastSuccess = false
+                            showToast = true
+                        }
                     }
                 }
             }
         }
     }
     
-    
-    var picker: some View {
-        Menu {
-            Button {
-                withAnimation {
-                    DispatchQueue.main.async { viewModel.filter = nil }
-                }
-            } label: {
-                Text(LocalizedStringKey("All"))
-            }
-            
-            ForEach(TypeEnum.allCases, id: \.self) { type in
-                Button {
-                    withAnimation {
-                        DispatchQueue.main.async { viewModel.filter = type }
-                    }
-
-                } label: {
-                    Label(LocalizedStringKey(type.title), systemImage: type.imageTitle)
-                }
-            }
-        } label: {
-            if let filter = viewModel.filter {
-                Image(systemName: filter.imageTitle)
-                    .font(.headline)
-                    .padding()
-            } else {
-                Image(systemName:"slider.horizontal.3")
-                    .font(.headline)
-                    .padding()
-            }
-        }
-        .foregroundStyle(.primary)
-    }
-
     var notificationView: some View {
         Group {
             switch pushManager.state {
             case .notDetermined:
-                // ⏳ Not asked yet
+
                 VStack(spacing: 16) {
                     Button {
                         pushManager.registerForPushNotifications()
@@ -248,7 +221,7 @@ struct CalendarView: View {
                 .padding(.horizontal)
 
             case .denied:
-                // ❌ Denied by user
+
                 VStack(spacing: 16) {
                     Button {
                         pushManager.openSettings()
@@ -261,7 +234,7 @@ struct CalendarView: View {
                 .padding(.horizontal)
 
             case .authorized:
-                // ✅ Authorized → show your favorites logic
+
                 if favorites.isEmpty {
                     VStack(spacing: 16) {
                         NavigationLink(destination: CompanyPickerView()) {
@@ -310,96 +283,47 @@ struct CalendarView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             pushManager.configure()
         }
-        .onAppear {
-            pushManager.configure()
-        }
+        .onAppear { pushManager.configure() }
     }
     
-}
-
-
-struct CompanyAnnouncementCardView: View {
-
-    var item: Dividends
-
-    var body: some View {
-        HStack(alignment: .top,spacing: 12) {
-            AsyncRoundedRectangleCompanyLogoView(ticker: item.symbol, urlString: item.imageUrl)
-
-            VStack(alignment: .leading, spacing: 6) {
-                
-                HStack {
-                    CompanyAnnouncementTagView(type: item.type)
-                    Spacer()
-                    if item.type != .assembly {
-                        HStack {
-                            Text(item.amount.rounded(to: 2))
-                            Image("sar")
-                                .resizable()
-                                .renderingMode(.template)
-                                .foregroundStyle(Color("AccentColor"))
-                                .frame(width: 15,height: 15)
-                        }
-                        .font(.system(size: 12))
-                    }
+    var picker: some View {
+        Menu {
+            Button {
+                withAnimation {
+                    DispatchQueue.main.async { viewModel.filter = nil }
                 }
-                
-                Group {
-                    if Helper.isArabic() {
-                        Text(item.companyName)
-                    } else {
-                        Text(item.companyNameEng ?? item.companyName)
-                    }
-                }
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
-                .font(.subheadline)
-                .bold()
-                
-                HStack {
-                    Text(item.eventDate.formatDateInEnglish())
-                        .foregroundStyle(.secondary)
-                    
-                    if let type = item.holdingType {
-                        Text(.init(type.title))
-                            .foregroundStyle(.purple)
-                    }
-                }
-                .font(.caption2)
+            } label: {
+                Text(LocalizedStringKey("All"))
             }
+            
+            ForEach(TypeEnum.allCases, id: \.self) { type in
+                Button {
+                    withAnimation {
+                        DispatchQueue.main.async { viewModel.filter = type }
+                    }
 
+                } label: {
+                    Label(LocalizedStringKey(type.title), systemImage: type.imageTitle)
+                }
+            }
+        } label: {
+            if let filter = viewModel.filter {
+                Image(systemName: filter.imageTitle)
+                    .font(.headline)
+                    .padding()
+            } else {
+                Image(systemName:"slider.horizontal.3")
+                    .font(.headline)
+                    .padding()
+            }
         }
-        .padding()
-        .frame(width: UIScreen.main.bounds.width * 0.8)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.systemGray6))
-        )
+        .foregroundStyle(.primary)
     }
-}
 
-struct CompanyAnnouncementTagView: View {
-    var type :TypeEnum
+
     
-    var body: some View {
-        HStack(spacing: 3){
-            Text(.init(type.title))
-                .bold()
-            Image(systemName: type.imageTitle)
-        }
-        .font(.system(size: 12))
-        .foregroundStyle(.white)
-        .lineLimit(1)
-        .minimumScaleFactor(0.5)
-        .padding(6)
-        .padding(.horizontal,4)
-        .background(
-            Capsule()
-                .fill(Color(type.color))
-        )
-        
-    }
 }
+
 
 #Preview {
     CompoundedTabView()
