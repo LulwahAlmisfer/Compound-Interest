@@ -87,16 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FDE33452E7F3E7D00B89420 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */,
+				2FFD5BF82DB400AE00E85436 /* CalendarView.swift */,
+				A00900042B407AFA0061987A /* SettingsView.swift */,
+				2FBB12CD2E6B08770030BB6A /* CompanyPickerView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		2FFD5BEE2DB3B1EB00E85436 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2FDE33432E7F36A900B89420 /* ToastView.swift */,
 				2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */,
 				2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */,
-				2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */,
-				2FFD5BF82DB400AE00E85436 /* CalendarView.swift */,
-				A00900042B407AFA0061987A /* SettingsView.swift */,
-				2FBB12CD2E6B08770030BB6A /* CompanyPickerView.swift */,
+				2FDE33452E7F3E7D00B89420 /* Screens */,
 			);
 			path = Views;
 			sourceTree = "<group>";
