@@ -164,5 +164,22 @@ final class PushManager: NSObject, ObservableObject {
             throw URLError(.badServerResponse)
         }
     }
+    
+    public func unSubscribeCompany(deviceToken: String, companySymbol: String) async throws {
+        guard let url = URL(string: "https://dividens-api-460632706650.me-central1.run.app/api/subscriptions/unSubscribe") else { return }
+        
+        let request = SubscriptionRequest(deviceToken: deviceToken, companySymbol: companySymbol)
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try JSONEncoder().encode(request)
+        
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        print(response)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+    }
 
 }

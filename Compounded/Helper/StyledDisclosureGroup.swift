@@ -22,7 +22,7 @@ struct StyledDisclosureGroup<Content: View>: View {
     }
 
     var body: some View {
-        DisclosureGroup(title, isExpanded: $isExpanded) {
+        DisclosureGroup(LocalizedStringKey(title), isExpanded: $isExpanded) {
             content()
                 .background(Color(.systemGroupedBackground))
                 .cornerRadius(12)

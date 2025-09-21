@@ -465,7 +465,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "صنع بكل 💚"
+            "value" : "صنع بحب 💚"
           }
         }
       }
@@ -751,8 +751,11 @@
         }
       }
     },
+    "Unsubscribe" : {
+
+    },
     "Upcoming" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

@@ -266,6 +266,43 @@ struct CalendarView: View {
                                     RoundedRectangle(cornerRadius: 12)
                                         .fill(Color(.systemGray6))
                                 )
+                                .contextMenu{
+                                    Button("Unsubscribe"){
+                                        Task {
+                                            do {
+                                                guard let token = pushManager.deviceToken else {
+                                                    withAnimation {
+                                                        toastMessage = "❌ No device token available."
+                                                        toastSuccess = false
+                                                        showToast = true
+                                                    }
+                                                    return
+                                                }
+                                                
+                                                try await pushManager.unSubscribeCompany(
+                                                    deviceToken: token,
+                                                    companySymbol: fav.id
+                                                )
+                                                
+                                                modelContext.delete(fav)
+                                                try modelContext.save()
+                                                
+                                                withAnimation {
+                                                    toastMessage = "✅ unSubscribed"
+                                                    toastSuccess = true
+                                                    showToast = true
+                                                }
+                                                
+                                            } catch {
+                                                withAnimation {
+                                                    toastMessage = "❌ Failed to Unsubscribe"
+                                                    toastSuccess = false
+                                                    showToast = true
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                             
                             NavigationLink(destination: CompanyPickerView()) {
