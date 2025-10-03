@@ -20,6 +20,7 @@ struct Dividends: Codable, Identifiable {
     let holdingTime: Date?
     let holdingSite: String?
     let holdingType: holdingTypeEnum?
+    let annurl : String?
 
     var isTasi: Bool {
         if let symbolNum = Int(symbol) {
@@ -29,7 +30,7 @@ struct Dividends: Codable, Identifiable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, symbol, type, eventDate, companyName, companyNameEng, amount, imageUrl, holdingTime, holdingSite, holdingType
+        case id, symbol, type, eventDate, companyName, companyNameEng, amount, imageUrl, holdingTime, holdingSite, holdingType, annurl
     }
 
     init(from decoder: Decoder) throws {
@@ -62,6 +63,7 @@ struct Dividends: Codable, Identifiable {
 
         self.holdingSite = try container.decodeIfPresent(String.self, forKey: .holdingSite)
         self.holdingType = try container.decodeIfPresent(holdingTypeEnum.self, forKey: .holdingType)
+        self.annurl = try container.decodeIfPresent(String.self, forKey: .annurl)
     }
 }
 

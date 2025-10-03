@@ -66,7 +66,16 @@ struct CalendarView: View {
                             StyledDisclosureGroup("Upcoming", isExpanded: $isUpcomingExpanded) {
                                 LazyVStack(spacing: 0) {
                                     ForEach(viewModel.getUpcomingAnnouncements(), id: \.id) { item in
-                                        announcementRow(item: item)
+                                        if let url = item.annurl {
+                                            NavigationLink(destination: {
+                                               AnnouncementDetailView(url: url)
+                                            }, label: {
+                                              announcementRow(item: item)
+                                            })
+
+                                        } else {
+                                            announcementRow(item: item)
+                                        }
                                     }
                                 }
                             }
@@ -356,8 +365,6 @@ struct CalendarView: View {
         }
         .foregroundStyle(.primary)
     }
-
-
     
 }
 

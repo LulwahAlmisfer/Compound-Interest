@@ -22,6 +22,9 @@
 		2FDE33332E7F362B00B89420 /* CompanyAnnouncementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */; };
 		2FDE33352E7F364600B89420 /* CompanyAnnouncementTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */; };
 		2FDE33442E7F36A900B89420 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE33432E7F36A900B89420 /* ToastView.swift */; };
+		2FF01E802E8E9F49000F997D /* AnnouncementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E7F2E8E9F49000F997D /* AnnouncementResponse.swift */; };
+		2FF01E822E8EA16D000F997D /* AnnouncementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */; };
+		2FF01E842E8EA175000F997D /* AnnouncementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E832E8EA175000F997D /* AnnouncementDetailViewModel.swift */; };
 		2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */; };
 		2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */; };
 		2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */; };
@@ -57,6 +60,9 @@
 		2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAnnouncementCardView.swift; sourceTree = "<group>"; };
 		2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAnnouncementTagView.swift; sourceTree = "<group>"; };
 		2FDE33432E7F36A900B89420 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		2FF01E7F2E8E9F49000F997D /* AnnouncementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementResponse.swift; sourceTree = "<group>"; };
+		2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailView.swift; sourceTree = "<group>"; };
+		2FF01E832E8EA175000F997D /* AnnouncementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewModel.swift; sourceTree = "<group>"; };
 		2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestView.swift; sourceTree = "<group>"; };
 		2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestViewModel.swift; sourceTree = "<group>"; };
 		2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedTabView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 		2FFD5BEE2DB3B1EB00E85436 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */,
 				2FDE33432E7F36A900B89420 /* ToastView.swift */,
 				2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */,
 				2FDE33322E7F362B00B89420 /* CompanyAnnouncementCardView.swift */,
@@ -112,6 +119,7 @@
 		2FFD5BEF2DB3B20900E85436 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2FF01E832E8EA175000F997D /* AnnouncementDetailViewModel.swift */,
 				2FDE332C2E7F347A00B89420 /* CompanyPickerViewModel.swift */,
 				2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */,
 				2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */,
@@ -137,6 +145,7 @@
 		2FFD5BF12DB3B26A00E85436 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2FF01E7F2E8E9F49000F997D /* AnnouncementResponse.swift */,
 				2FDE332E2E7F349300B89420 /* CompanyResponse.swift */,
 				2FFD5BF22DB3B27E00E85436 /* CompoundInterestResult.swift */,
 				2FFD5BF42DB3B29300E85436 /* ChartEntry.swift */,
@@ -271,6 +280,7 @@
 			files = (
 				2FDE33352E7F364600B89420 /* CompanyAnnouncementTagView.swift in Sources */,
 				2FFD5BF92DB400AE00E85436 /* CalendarView.swift in Sources */,
+				2FF01E842E8EA175000F997D /* AnnouncementDetailViewModel.swift in Sources */,
 				A00900032B407AE40061987A /* Utilities.swift in Sources */,
 				2F9839F02DBBB58300B6EF18 /* StockInfo.swift in Sources */,
 				2FD089432DBA797E00B40BFD /* Shimmer.swift in Sources */,
@@ -278,6 +288,8 @@
 				2FFD5BF72DB4002000E85436 /* Dividends.swift in Sources */,
 				2FFD5BF32DB3B27E00E85436 /* CompoundInterestResult.swift in Sources */,
 				A00900052B407AFA0061987A /* SettingsView.swift in Sources */,
+				2FF01E822E8EA16D000F997D /* AnnouncementDetailView.swift in Sources */,
+				2FF01E802E8E9F49000F997D /* AnnouncementResponse.swift in Sources */,
 				2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */,
 				2FBB12CE2E6B08770030BB6A /* CompanyPickerView.swift in Sources */,
 				2FBB08852E699C370030BB6A /* AppDelegate.swift in Sources */,
