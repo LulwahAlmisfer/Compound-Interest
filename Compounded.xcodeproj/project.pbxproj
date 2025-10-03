@@ -25,6 +25,7 @@
 		2FF01E802E8E9F49000F997D /* AnnouncementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E7F2E8E9F49000F997D /* AnnouncementResponse.swift */; };
 		2FF01E822E8EA16D000F997D /* AnnouncementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */; };
 		2FF01E842E8EA175000F997D /* AnnouncementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E832E8EA175000F997D /* AnnouncementDetailViewModel.swift */; };
+		2FF01E882E8FFC8F000F997D /* DividendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF01E872E8FFC8F000F997D /* DividendDetailView.swift */; };
 		2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */; };
 		2FFD5BEB2DB28B4600E85436 /* CompoundInterestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */; };
 		2FFD5BED2DB28E2600E85436 /* CompoundedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */; };
@@ -63,6 +64,7 @@
 		2FF01E7F2E8E9F49000F997D /* AnnouncementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementResponse.swift; sourceTree = "<group>"; };
 		2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailView.swift; sourceTree = "<group>"; };
 		2FF01E832E8EA175000F997D /* AnnouncementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewModel.swift; sourceTree = "<group>"; };
+		2FF01E872E8FFC8F000F997D /* DividendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendDetailView.swift; sourceTree = "<group>"; };
 		2FFD5BE82DB28B2F00E85436 /* CompoundInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestView.swift; sourceTree = "<group>"; };
 		2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestViewModel.swift; sourceTree = "<group>"; };
 		2FFD5BEC2DB28E2600E85436 /* CompoundedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundedTabView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		2FFD5BEE2DB3B1EB00E85436 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FF01E872E8FFC8F000F997D /* DividendDetailView.swift */,
 				2FF01E812E8EA16C000F997D /* AnnouncementDetailView.swift */,
 				2FDE33432E7F36A900B89420 /* ToastView.swift */,
 				2FDE33342E7F364600B89420 /* CompanyAnnouncementTagView.swift */,
@@ -293,6 +296,7 @@
 				2FFD5BE92DB28B2F00E85436 /* CompoundInterestView.swift in Sources */,
 				2FBB12CE2E6B08770030BB6A /* CompanyPickerView.swift in Sources */,
 				2FBB08852E699C370030BB6A /* AppDelegate.swift in Sources */,
+				2FF01E882E8FFC8F000F997D /* DividendDetailView.swift in Sources */,
 				2FFD5BFD2DB4089700E85436 /* AsyncRoundedRectangleCompanyLogoView.swift in Sources */,
 				2FBB08832E6998B60030BB6A /* CalendarManager.swift in Sources */,
 				2FDE33442E7F36A900B89420 /* ToastView.swift in Sources */,
@@ -454,7 +458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.3;
+				MARKETING_VERSION = 3.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LulwahAlmisfer.Compounded;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -483,7 +487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.3;
+				MARKETING_VERSION = 3.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LulwahAlmisfer.Compounded;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -68,13 +68,17 @@ struct CalendarView: View {
                                     ForEach(viewModel.getUpcomingAnnouncements(), id: \.id) { item in
                                         if let url = item.annurl {
                                             NavigationLink(destination: {
-                                               AnnouncementDetailView(url: url)
+                                                AnnouncementDetailView(url: url)
                                             }, label: {
-                                              announcementRow(item: item)
+                                                announcementRow(item: item)
                                             })
-
+                                            
                                         } else {
-                                            announcementRow(item: item)
+                                            NavigationLink(destination: {
+                                                DividendDetailView(dividend: item)
+                                            }) {
+                                                announcementRow(item: item)
+                                            }
                                         }
                                     }
                                 }
@@ -83,7 +87,20 @@ struct CalendarView: View {
                             StyledDisclosureGroup("Past", isExpanded: $isPastExpanded) {
                                 LazyVStack(spacing: 0) {
                                     ForEach(viewModel.getPastAnnouncements(), id: \.id) { item in
-                                        announcementRow(item: item)
+                                        if let url = item.annurl {
+                                            NavigationLink(destination: {
+                                                AnnouncementDetailView(url: url)
+                                            }, label: {
+                                                announcementRow(item: item)
+                                            })
+                                            
+                                        } else {
+                                            NavigationLink(destination: {
+                                                DividendDetailView(dividend: item)
+                                            }) {
+                                                announcementRow(item: item)
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -217,7 +234,7 @@ struct CalendarView: View {
         Group {
             switch pushManager.state {
             case .notDetermined:
-
+                
                 VStack(spacing: 16) {
                     Button {
                         pushManager.registerForPushNotifications()
@@ -228,9 +245,9 @@ struct CalendarView: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
             case .denied:
-
+                
                 VStack(spacing: 16) {
                     Button {
                         pushManager.openSettings()
@@ -241,9 +258,9 @@ struct CalendarView: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
             case .authorized:
-
+                
                 if favorites.isEmpty {
                     VStack(spacing: 16) {
                         NavigationLink(destination: CompanyPickerView()) {
@@ -347,7 +364,7 @@ struct CalendarView: View {
                     withAnimation {
                         DispatchQueue.main.async { viewModel.filter = type }
                     }
-
+                    
                 } label: {
                     Label(LocalizedStringKey(type.title), systemImage: type.imageTitle)
                 }
