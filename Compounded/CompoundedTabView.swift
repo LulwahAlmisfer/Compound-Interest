@@ -21,7 +21,12 @@ struct CompoundedTabView: View {
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
-            
+
+            WatchlistView()
+                .tabItem {
+                    Label("Watchlist", systemImage: "star.fill")
+                }
+
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")

@@ -11,6 +11,8 @@
 		2F9839F02DBBB58300B6EF18 /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9839EF2DBBB58300B6EF18 /* StockInfo.swift */; };
 		2FBB08832E6998B60030BB6A /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB08822E6998B60030BB6A /* CalendarManager.swift */; };
 		2FBB08852E699C370030BB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB08842E699C370030BB6A /* AppDelegate.swift */; };
+		2FAA00022E9B00000030BB6A /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA00012E9B00000030BB6A /* WatchlistView.swift */; };
+		2FAA00042E9B00000030BB6A /* WatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA00032E9B00000030BB6A /* WatchlistViewModel.swift */; };
 		2FBB12CE2E6B08770030BB6A /* CompanyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB12CD2E6B08770030BB6A /* CompanyPickerView.swift */; };
 		2FBB12D02E6B0A690030BB6A /* SubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB12CF2E6B0A690030BB6A /* SubscriptionRequest.swift */; };
 		2FBB12D42E6B29860030BB6A /* FavoriteCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB12D32E6B29850030BB6A /* FavoriteCompany.swift */; };
@@ -49,6 +51,8 @@
 		2FBB08822E6998B60030BB6A /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		2FBB08842E699C370030BB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FBB12CC2E69A1A30030BB6A /* Compounded.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Compounded.entitlements; sourceTree = "<group>"; };
+		2FAA00012E9B00000030BB6A /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
+		2FAA00032E9B00000030BB6A /* WatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModel.swift; sourceTree = "<group>"; };
 		2FBB12CD2E6B08770030BB6A /* CompanyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPickerView.swift; sourceTree = "<group>"; };
 		2FBB12CF2E6B0A690030BB6A /* SubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRequest.swift; sourceTree = "<group>"; };
 		2FBB12D32E6B29850030BB6A /* FavoriteCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCompany.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				2FFD5BF82DB400AE00E85436 /* CalendarView.swift */,
 				A00900042B407AFA0061987A /* SettingsView.swift */,
 				2FBB12CD2E6B08770030BB6A /* CompanyPickerView.swift */,
+				2FAA00012E9B00000030BB6A /* WatchlistView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				2FDE332C2E7F347A00B89420 /* CompanyPickerViewModel.swift */,
 				2FFD5BEA2DB28B4600E85436 /* CompoundInterestViewModel.swift */,
 				2FFD5BFA2DB4010100E85436 /* CalendarViewModel.swift */,
+				2FAA00032E9B00000030BB6A /* WatchlistViewModel.swift */,
 				2F98396F2DBBAFD100B6EF18 /* symbols_and_titles_en.json */,
 				2FD089012DBA788F00B40BFD /* CompoundedMockResponse.json */,
 			);
@@ -310,6 +316,8 @@
 				2FBB12D02E6B0A690030BB6A /* SubscriptionRequest.swift in Sources */,
 				2FFD5BF52DB3B29300E85436 /* ChartEntry.swift in Sources */,
 				2FDE33332E7F362B00B89420 /* CompanyAnnouncementCardView.swift in Sources */,
+				2FAA00022E9B00000030BB6A /* WatchlistView.swift in Sources */,
+				2FAA00042E9B00000030BB6A /* WatchlistViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
