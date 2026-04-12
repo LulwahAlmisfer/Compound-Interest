@@ -20,7 +20,27 @@ struct CalendarView: View {
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastSuccess = true
-    
+
+    // MARK: - One-time resubscription after backend DB reset
+    private func resubscribeAllFavoritesIfNeeded() {
+        let key = "didResubscribeAfterDBReset"
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        guard let token = pushManager.deviceToken else { return }
+
+        // Mark done immediately so this never runs again, even if the app is killed mid-way.
+        UserDefaults.standard.set(true, forKey: key)
+        guard !favorites.isEmpty else { return }
+
+        Task {
+            for fav in favorites {
+                try? await pushManager.subscribeToCompany(
+                    deviceToken: token,
+                    companySymbol: fav.id
+                )
+            }
+        }
+    }
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -39,7 +59,17 @@ struct CalendarView: View {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 16) {
                                         ForEach(viewModel.getTodayAnnouncements()) { announcement in
-                                            CompanyAnnouncementCardView(item: announcement)
+                                            if let url = announcement.annurl {
+                                                NavigationLink(destination: AnnouncementDetailView(url: url)) {
+                                                    CompanyAnnouncementCardView(item: announcement)
+                                                }
+                                                .buttonStyle(.plain)
+                                            } else {
+                                                NavigationLink(destination: DividendDetailView(dividend: announcement)) {
+                                                    CompanyAnnouncementCardView(item: announcement)
+                                                }
+                                                .buttonStyle(.plain)
+                                            }
                                         }
                                     }
                                     .padding(.horizontal)
@@ -125,6 +155,8 @@ struct CalendarView: View {
             }
         }
         .refreshable { viewModel.fetchDividends() }
+        .onAppear { resubscribeAllFavoritesIfNeeded() }
+        .onChange(of: pushManager.deviceToken) { _ in resubscribeAllFavoritesIfNeeded() }
     }
     
     private func announcementRow(item: Dividends) -> some View {
